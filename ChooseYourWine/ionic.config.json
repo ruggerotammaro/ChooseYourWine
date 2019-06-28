@@ -1,5 +1,7 @@
 {
   "name": "ChooseYourWine",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
