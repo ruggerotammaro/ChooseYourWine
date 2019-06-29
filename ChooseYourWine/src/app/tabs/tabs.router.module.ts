@@ -26,6 +26,24 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'food-pairings',
+        children: [
+          {
+            path: '',
+            loadChildren: '../food-pairings/food-pairings.module#FoodPairingsPageModule'
+          }
+        ]
+      },
+      {
+        path: 'wine-details',
+        children: [
+          {
+            path: '',
+            loadChildren: '../wine-details/wine-details.module#WineDetailsPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/Home',
         pathMatch: 'full'
