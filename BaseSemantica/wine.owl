@@ -47,24 +47,6 @@ dc:title rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://w3id.org/food/ontology/disciplinare-upper/haDenominazione
-<http://w3id.org/food/ontology/disciplinare-upper/haDenominazione> rdf:type owl:ObjectProperty ;
-                                                                   rdfs:domain <http://w3id.org/food/ontology/disciplinare-vino/vino> ;
-                                                                   rdfs:range <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> .
-
-
-###  http://w3id.org/food/ontology/disciplinare-upper/haDescrizione
-<http://w3id.org/food/ontology/disciplinare-upper/haDescrizione> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:domain <http://w3id.org/food/ontology/disciplinare-vino/vino> ;
-                                                                 rdfs:range <http://w3id.org/food/ontology/disciplinare-upper/DescrizioneMateriaPrima> .
-
-
-###  http://w3id.org/food/ontology/disciplinare-upper/haTipologia
-<http://w3id.org/food/ontology/disciplinare-upper/haTipologia> rdf:type owl:ObjectProperty ;
-                                                               rdfs:domain <http://w3id.org/food/ontology/disciplinare-vino/vino> ;
-                                                               rdfs:range <http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino> .
-
-
 ###  http://w3id.org/food/ontology/disciplinare-vino#abbinato
 disciplinare-vino:abbinato rdf:type owl:ObjectProperty ;
                            rdfs:domain <http://w3id.org/food/ontology/disciplinare-vino/vino> ;
@@ -75,6 +57,12 @@ disciplinare-vino:abbinato rdf:type owl:ObjectProperty ;
 disciplinare-vino:haAnnata rdf:type owl:ObjectProperty ;
                            rdfs:domain <http://w3id.org/food/ontology/disciplinare-vino/vino> ;
                            rdfs:range disciplinare-vino:annata .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#haDenominazione
+disciplinare-vino:haDenominazione rdf:type owl:ObjectProperty ;
+                                  rdfs:domain <http://w3id.org/food/ontology/disciplinare-vino/vino> ;
+                                  rdfs:range <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#haGradazione
@@ -88,6 +76,10 @@ disciplinare-vino:haGradazione rdf:type owl:ObjectProperty ;
 disciplinare-vino:haTemperatura rdf:type owl:ObjectProperty ;
                                 rdfs:domain <http://w3id.org/food/ontology/disciplinare-vino/vino> ;
                                 rdfs:range disciplinare-vino:temperatura .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#haTipologia
+disciplinare-vino:haTipologia rdf:type owl:ObjectProperty .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#haVitigno
@@ -238,18 +230,6 @@ disciplinare-vino:temperatura rdf:type owl:Class .
 <http://w3id.org/food/ontology/disciplinare-vino/vino> rdf:type owl:Class ;
                                                        rdfs:subClassOf <http://w3id.org/food/ontology/disciplinare-upper/Prodotto> ,
                                                                        [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty <http://w3id.org/food/ontology/disciplinare-upper/haDenominazione> ;
-                                                                         owl:someValuesFrom <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino>
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty <http://w3id.org/food/ontology/disciplinare-upper/haDescrizione> ;
-                                                                         owl:someValuesFrom <http://w3id.org/food/ontology/disciplinare-upper/DescrizioneMateriaPrima>
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty <http://w3id.org/food/ontology/disciplinare-upper/haTipologia> ;
-                                                                         owl:someValuesFrom <http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino>
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
                                                                          owl:onProperty disciplinare-vino:abbinato ;
                                                                          owl:someValuesFrom disciplinare-vino:cibo
                                                                        ] ,
@@ -258,12 +238,20 @@ disciplinare-vino:temperatura rdf:type owl:Class .
                                                                          owl:someValuesFrom disciplinare-vino:annata
                                                                        ] ,
                                                                        [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty disciplinare-vino:haDenominazione ;
+                                                                         owl:someValuesFrom <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino>
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
                                                                          owl:onProperty disciplinare-vino:haGradazione ;
                                                                          owl:someValuesFrom disciplinare-vino:gradazione
                                                                        ] ,
                                                                        [ rdf:type owl:Restriction ;
                                                                          owl:onProperty disciplinare-vino:haTemperatura ;
                                                                          owl:someValuesFrom disciplinare-vino:temperatura
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty disciplinare-vino:haTipologia ;
+                                                                         owl:someValuesFrom <http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino>
                                                                        ] ,
                                                                        [ rdf:type owl:Restriction ;
                                                                          owl:onProperty disciplinare-vino:haVitigno ;
@@ -291,11 +279,11 @@ owl:Thing rdf:type owl:Class .
 ###  http://dbpedia.org/ontology/Wine
 <http://dbpedia.org/ontology/Wine> rdf:type owl:NamedIndividual ,
                                             <http://w3id.org/food/ontology/disciplinare-vino/vino> ;
-                                   <http://w3id.org/food/ontology/disciplinare-upper/haDenominazione> disciplinare-vino:Fidelis_2015 ,
-                                                                                                      disciplinare-vino:Montefalco_Rosso ,
-                                                                                                      disciplinare-vino:Poggio_Degli_Uberti ,
-                                                                                                      disciplinare-vino:ViniDeStefano ,
-                                                                                                      disciplinare-vino:ViniDeStefanoRosso .
+                                   disciplinare-vino:haDenominazione disciplinare-vino:Fidelis_2015 ,
+                                                                     disciplinare-vino:Montefalco_Rosso ,
+                                                                     disciplinare-vino:Poggio_Degli_Uberti ,
+                                                                     disciplinare-vino:ViniDeStefano ,
+                                                                     disciplinare-vino:ViniDeStefanoRosso .
 
 
 ###  http://dbpedia.org/page/Abruzzo
@@ -461,7 +449,6 @@ disciplinare-vino:Coppa rdf:type owl:NamedIndividual ,
 ###  http://w3id.org/food/ontology/disciplinare-vino#Fidelis_2015
 disciplinare-vino:Fidelis_2015 rdf:type owl:NamedIndividual ,
                                         <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
-                               <http://w3id.org/food/ontology/disciplinare-upper/haTipologia> disciplinare-vino:rosso ;
                                disciplinare-vino:abbinato <http://dbpedia.org/ontology/Cheese> ,
                                                           <http://dbpedia.org/page/Beef> ,
                                                           <http://dbpedia.org/page/Salami> ,
@@ -469,6 +456,7 @@ disciplinare-vino:Fidelis_2015 rdf:type owl:NamedIndividual ,
                                disciplinare-vino:haAnnata <http://dbpedia.org/page/2015> ;
                                disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#13_gradi> ;
                                disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#16-18_c°> ;
+                               disciplinare-vino:haTipologia disciplinare-vino:rosso ;
                                disciplinare-vino:haVitigno disciplinare-vino:Aglianico ;
                                disciplinare-vino:éProdotto <http://dbpedia.org/page/Campania> ;
                                disciplinare-vino:éServito disciplinare-vino:Borgogna ;
@@ -493,13 +481,13 @@ disciplinare-vino:Gran_Ballon rdf:type owl:NamedIndividual ,
 ###  http://w3id.org/food/ontology/disciplinare-vino#Montefalco_Rosso
 disciplinare-vino:Montefalco_Rosso rdf:type owl:NamedIndividual ,
                                             <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
-                                   <http://w3id.org/food/ontology/disciplinare-upper/haTipologia> disciplinare-vino:rosso ;
                                    disciplinare-vino:abbinato <http://dbpedia.org/ontology/Cheese> ,
                                                               <http://dbpedia.org/page/Beef> ,
                                                               disciplinare-vino:Pasta ;
                                    disciplinare-vino:haAnnata <http://dbpedia.org/page/2016> ;
                                    disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#13_gradi> ;
                                    disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#16-18_c°> ;
+                                   disciplinare-vino:haTipologia disciplinare-vino:rosso ;
                                    disciplinare-vino:haVitigno disciplinare-vino:Sangiovese ;
                                    disciplinare-vino:éProdotto <http://dbpedia.org/page/Umbria> ;
                                    disciplinare-vino:éServito disciplinare-vino:Ballon ;
@@ -524,7 +512,6 @@ disciplinare-vino:Pesce rdf:type owl:NamedIndividual ,
 ###  http://w3id.org/food/ontology/disciplinare-vino#Poggio_Degli_Uberti
 disciplinare-vino:Poggio_Degli_Uberti rdf:type owl:NamedIndividual ,
                                                <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
-                                      <http://w3id.org/food/ontology/disciplinare-upper/haTipologia> disciplinare-vino:rosso ;
                                       disciplinare-vino:abbinato <http://dbpedia.org/ontology/Cheese> ,
                                                                  <http://dbpedia.org/page/Beef> ,
                                                                  <http://dbpedia.org/page/Salami> ,
@@ -532,6 +519,7 @@ disciplinare-vino:Poggio_Degli_Uberti rdf:type owl:NamedIndividual ,
                                       disciplinare-vino:haAnnata <http://dbpedia.org/page/2017> ;
                                       disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#13_gradi> ;
                                       disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#16-18_c°> ;
+                                      disciplinare-vino:haTipologia disciplinare-vino:rosso ;
                                       disciplinare-vino:haVitigno disciplinare-vino:Sangiovese ;
                                       disciplinare-vino:éProdotto <http://dbpedia.org/page/Tuscany> ;
                                       disciplinare-vino:éServito disciplinare-vino:Borgogna ;
@@ -576,8 +564,6 @@ disciplinare-vino:Tulipano_Piccolo rdf:type owl:NamedIndividual ,
 ###  http://w3id.org/food/ontology/disciplinare-vino#ViniDeStefano
 disciplinare-vino:ViniDeStefano rdf:type owl:NamedIndividual ,
                                          <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
-                                <http://w3id.org/food/ontology/disciplinare-upper/haDescrizione> disciplinare-vino:questo_vino_è_buono ;
-                                <http://w3id.org/food/ontology/disciplinare-upper/haTipologia> disciplinare-vino:bianco ;
                                 disciplinare-vino:abbinato <http://dbpedia.org/ontology/Cheese> ,
                                                            disciplinare-vino:Frutti_di_mare ,
                                                            disciplinare-vino:Pesce ,
@@ -585,6 +571,7 @@ disciplinare-vino:ViniDeStefano rdf:type owl:NamedIndividual ,
                                 disciplinare-vino:haAnnata <http://dbpedia.org/page/2014> ;
                                 disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#14_gradi> ;
                                 disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#18-20_c°> ;
+                                disciplinare-vino:haTipologia disciplinare-vino:bianco ;
                                 disciplinare-vino:haVitigno disciplinare-vino:Tufo ;
                                 disciplinare-vino:éProdotto <http://dbpedia.org/page/Campania> ;
                                 disciplinare-vino:éServito disciplinare-vino:Ballon ;
@@ -595,12 +582,12 @@ disciplinare-vino:ViniDeStefano rdf:type owl:NamedIndividual ,
 ###  http://w3id.org/food/ontology/disciplinare-vino#ViniDeStefanoRosso
 disciplinare-vino:ViniDeStefanoRosso rdf:type owl:NamedIndividual ,
                                               <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
-                                     <http://w3id.org/food/ontology/disciplinare-upper/haTipologia> disciplinare-vino:rosso ;
                                      disciplinare-vino:abbinato <http://dbpedia.org/page/Beef> ,
                                                                 <http://dbpedia.org/page/Chicken> ;
                                      disciplinare-vino:haAnnata <http://dbpedia.org/page/2016> ;
                                      disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#14_gradi> ;
                                      disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#16-18_c°> ;
+                                     disciplinare-vino:haTipologia disciplinare-vino:rosso ;
                                      disciplinare-vino:haVitigno disciplinare-vino:Campi_Taurasini ;
                                      disciplinare-vino:éProdotto <http://dbpedia.org/page/Campania> ;
                                      disciplinare-vino:éServito disciplinare-vino:Ballon ;
@@ -734,9 +721,9 @@ disciplinare-vino:gradazione rdfs:comment "Indicates the level of alcohol presen
 
 
 disciplinare-vino:temperatura rdfs:comment "indicates which is ideal temperature of service of wine"@en ;
-                              rdfs:label "temperature"@en ,
-                                         "Temperatura"@it ;
-                              rdfs:comment "Indica la temperatura ideale per servire il vino"@it .
+                              rdfs:label "temperature"@en ;
+                              rdfs:comment "Indica la temperatura ideale per servire il vino"@it ;
+                              rdfs:label "Temperatura"@it .
 
 
 <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> rdfs:label "wine protected name"@en ;
