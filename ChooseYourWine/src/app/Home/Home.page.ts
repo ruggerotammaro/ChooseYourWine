@@ -23,8 +23,14 @@ export class HomePage {
 
     let params = new URLSearchParams();
     let query = 'PREFIX vino: <http://w3id.org/food/ontology/disciplinare-vino#> SELECT ?Nome ?Tipologia WHERE { ?x vino:haDenominazione ?Nome. ?Nome vino:haTipologia ?Tipologia. }';
+    params.append('default-graph-uri','http://localhost:8890/wineIMG');
     params.append('query', query);
-    params.append('format', 'json');
+    params.append('format', 'application sparql-results json');
+    params.append('timeout', '0');
+    params.append('debug','on');
+    params.append('run','Run Query');
+
+    console.log(params);
   
     let options: RequestOptionsArgs = {
       headers: headers,
