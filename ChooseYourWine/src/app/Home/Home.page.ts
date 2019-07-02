@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Http, RequestOptionsArgs, Headers, URLSearchParams } from '@angular/http';
 import { map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+
 
 
 @Component({
@@ -10,7 +9,7 @@ import { Injectable } from '@angular/core';
   templateUrl: 'Home.page.html',
   styleUrls: ['Home.page.scss']
 })
-@Injectable()
+
 export class HomePage {
   constructor(private http: Http) { }
 
@@ -22,6 +21,7 @@ export class HomePage {
       'Accept': 'application/json'
     });
 
+    console.log("qua ci sono");
     let params = new URLSearchParams();
     params.append('query', 'SELECT * WHERE { <http://dbpedia.org/resource/Awolnation> ?pref ?obj } LIMIT 10');
     params.append('format', 'json');
@@ -30,9 +30,9 @@ export class HomePage {
       headers: headers,
       params: URLSearchParams
     };
-
+    console.log("pure qua");
     this.http.get('http://dbpedia.org/sparql', options) // 1
-      .pipe(map(response => response.json()))
+      //.pipe(map(response => response.json()))
       .subscribe(data => {
           console.log(data);
           this.sparkqlData = data; // 3
