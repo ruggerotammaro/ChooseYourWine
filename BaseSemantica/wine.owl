@@ -460,6 +460,7 @@ disciplinare-vino:Fidelis_2015 rdf:type owl:NamedIndividual ,
                                disciplinare-vino:haVitigno disciplinare-vino:Aglianico ;
                                disciplinare-vino:éProdotto <http://dbpedia.org/page/Campania> ;
                                disciplinare-vino:éServito disciplinare-vino:Borgogna ;
+                               disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img923/8684/Hy1T4v.png" ;
                                disciplinare-vino:Produttore "Cantina Del Tamburno" .
 
 
@@ -491,6 +492,7 @@ disciplinare-vino:Montefalco_Rosso rdf:type owl:NamedIndividual ,
                                    disciplinare-vino:haVitigno disciplinare-vino:Sangiovese ;
                                    disciplinare-vino:éProdotto <http://dbpedia.org/page/Umbria> ;
                                    disciplinare-vino:éServito disciplinare-vino:Ballon ;
+                                   disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img921/8606/irPZ61.png" ;
                                    disciplinare-vino:Produttore "Arnaldo-Caprai" .
 
 
@@ -523,6 +525,7 @@ disciplinare-vino:Poggio_Degli_Uberti rdf:type owl:NamedIndividual ,
                                       disciplinare-vino:haVitigno disciplinare-vino:Sangiovese ;
                                       disciplinare-vino:éProdotto <http://dbpedia.org/page/Tuscany> ;
                                       disciplinare-vino:éServito disciplinare-vino:Borgogna ;
+                                      disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img921/9849/MCx4Sb.png" ;
                                       disciplinare-vino:Produttore "Silla" .
 
 
@@ -575,6 +578,7 @@ disciplinare-vino:ViniDeStefano rdf:type owl:NamedIndividual ,
                                 disciplinare-vino:haVitigno disciplinare-vino:Tufo ;
                                 disciplinare-vino:éProdotto <http://dbpedia.org/page/Campania> ;
                                 disciplinare-vino:éServito disciplinare-vino:Ballon ;
+                                disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img923/3083/OCZwDc.jpg" ;
                                 disciplinare-vino:Produttore "ViniDeStefano" ;
                                 rdfs:label "ViniDeStefanoBianco" .
 
@@ -591,6 +595,7 @@ disciplinare-vino:ViniDeStefanoRosso rdf:type owl:NamedIndividual ,
                                      disciplinare-vino:haVitigno disciplinare-vino:Campi_Taurasini ;
                                      disciplinare-vino:éProdotto <http://dbpedia.org/page/Campania> ;
                                      disciplinare-vino:éServito disciplinare-vino:Ballon ;
+                                     disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img922/1450/ipIgwR.jpg" ;
                                      disciplinare-vino:Produttore "ViniDeStefano" .
 
 

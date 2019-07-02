@@ -1,0 +1,1111 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/food/ontology/disciplinare-vino#"
+     xml:base="http://w3id.org/food/ontology/disciplinare-vino"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:disciplinare-vino="http://w3id.org/food/ontology/disciplinare-vino#">
+    <owl:Ontology rdf:about="http://w3id.org/food/ontology/disciplinare-vino">
+        <owl:imports rdf:resource="http://w3id.org/food/ontology/denominazione-italiana"/>
+        <dc:contributor>Aldo Gangemi</dc:contributor>
+        <dc:contributor>Giorgia Lodi</dc:contributor>
+        <dc:contributor>Luigi Asprino</dc:contributor>
+        <dc:creator>Silvio Peroni</dc:creator>
+        <dc:date>2015-05-24</dc:date>
+        <dc:description rdf:resource="http://w3id.org/food/img/vino.png"/>
+        <dc:title xml:lang="it">Ontologia dei Disciplinari sul vino</dc:title>
+        <dc:title xml:lang="en">Ontology of the policy documents for wine products</dc:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#abbinato -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#abbinato">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/vino"/>
+        <rdfs:range rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#haAnnata -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#haAnnata">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/vino"/>
+        <rdfs:range rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#annata"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#haDenominazione -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#haDenominazione">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/vino"/>
+        <rdfs:range rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#haGradazione -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#haGradazione">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/vino"/>
+        <rdfs:range rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#haTemperatura -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#haTemperatura">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/vino"/>
+        <rdfs:range rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#temperatura"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#haTipologia -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#haTipologia"/>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#haVitigno -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#haVitigno">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/vino"/>
+        <rdfs:range rdf:resource="http://aims.fao.org/aos/agrovoc/vitigno"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#éProdotto -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#éProdotto">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/vino"/>
+        <rdfs:range rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#éServito -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#éServito">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/vino"/>
+        <rdfs:range rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Calice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://aims.fao.org/aos/agrovoc/vitigno -->
+
+    <owl:DatatypeProperty rdf:about="http://aims.fao.org/aos/agrovoc/vitigno">
+        <rdfs:domain rdf:resource="http://aims.fao.org/aos/agrovoc/vitigno"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-upper/DescrizioneMateriaPrima -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/food/ontology/disciplinare-upper/DescrizioneMateriaPrima"/>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Calice -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Calice">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Calice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Cantina -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Cantina">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#ImmagineVino -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#ImmagineVino">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Produttore -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Produttore">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#annata -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#annata">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#annata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#cibo -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#cibo">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#gradazione -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#gradazione">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#temperatura -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino#temperatura">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#temperatura"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino">
+        <rdfs:domain rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://aims.fao.org/aos/agrovoc/vitigno -->
+
+    <owl:Class rdf:about="http://aims.fao.org/aos/agrovoc/vitigno"/>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-upper/DescrizioneMateriaPrima -->
+
+    <owl:Class rdf:about="http://w3id.org/food/ontology/disciplinare-upper/DescrizioneMateriaPrima"/>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-upper/Prodotto -->
+
+    <owl:Class rdf:about="http://w3id.org/food/ontology/disciplinare-upper/Prodotto"/>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Calice -->
+
+    <owl:Class rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Calice"/>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Cantina -->
+
+    <owl:Class rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#annata -->
+
+    <owl:Class rdf:about="http://w3id.org/food/ontology/disciplinare-vino#annata"/>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#cibo -->
+
+    <owl:Class rdf:about="http://w3id.org/food/ontology/disciplinare-vino#cibo">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/food/ontology/disciplinare-upper/Prodotto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#gradazione -->
+
+    <owl:Class rdf:about="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#temperatura -->
+
+    <owl:Class rdf:about="http://w3id.org/food/ontology/disciplinare-vino#temperatura"/>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino -->
+
+    <owl:Class rdf:about="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino"/>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino -->
+
+    <owl:Class rdf:about="http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino"/>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino/vino -->
+
+    <owl:Class rdf:about="http://w3id.org/food/ontology/disciplinare-vino/vino">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/food/ontology/disciplinare-upper/Prodotto"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#abbinato"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#haAnnata"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#annata"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#haDenominazione"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#haGradazione"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#haTemperatura"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#temperatura"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#haTipologia"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#haVitigno"/>
+                <owl:someValuesFrom rdf:resource="http://aims.fao.org/aos/agrovoc/vitigno"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="it">Descrive l&apos;insieme di tutti i vini, che possono essere associati ad una certa denominazione (ad esempio, \&quot;Abruzzo\&quot;) e tipologia (ad esempio, \&quot;rosso\&quot;).</rdfs:comment>
+        <rdfs:comment xml:lang="en">It represents all the wine products associated with a certain protected name and a certain type.</rdfs:comment>
+        <rdfs:label xml:lang="it">vino</rdfs:label>
+        <rdfs:label xml:lang="en">wine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Cheese -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/ontology/Cheese">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Wine -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/ontology/Wine">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/vino"/>
+        <haDenominazione rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Fidelis_2015"/>
+        <haDenominazione rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Montefalco_Rosso"/>
+        <haDenominazione rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Poggio_Degli_Uberti"/>
+        <haDenominazione rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#ViniDeStefano"/>
+        <haDenominazione rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#ViniDeStefanoRosso"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Abruzzo -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Abruzzo">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Bacon -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Bacon">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Beef -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Beef">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Campania -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Campania">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Chardonnay -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Chardonnay">
+        <rdf:type rdf:resource="http://aims.fao.org/aos/agrovoc/vitigno"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Chicken -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Chicken">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Emilia-Romagna -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Emilia-Romagna">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Ham -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Ham">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Italian_sausage -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Italian_sausage">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Lazio -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Lazio">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Lombardy -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Lombardy">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Piedmont -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Piedmont">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Salami -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Salami">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Sicily -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Sicily">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Tuscany -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Tuscany">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Umbria -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Umbria">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Veneto -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Veneto">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/2011 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/2011">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#annata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/2012 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/2012">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#annata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/2013 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/2013">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#annata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/2014 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/2014">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#annata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/2015 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/2015">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#annata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/2016 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/2016">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#annata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/2017 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/2017">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#annata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/2018 -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/2018">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#annata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Trentino-Alto_Adige/Südtirol -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Trentino-Alto_Adige/Südtirol">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Cantina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Aglianico -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Aglianico">
+        <rdf:type rdf:resource="http://aims.fao.org/aos/agrovoc/vitigno"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Ballon -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Ballon">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Calice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Borgogna -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Borgogna">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Calice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Campi_Taurasini -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Campi_Taurasini">
+        <rdf:type rdf:resource="http://aims.fao.org/aos/agrovoc/vitigno"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Chianti -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Chianti">
+        <rdf:type rdf:resource="http://aims.fao.org/aos/agrovoc/vitigno"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Coppa -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Coppa">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Calice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Fidelis_2015 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Fidelis_2015">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino"/>
+        <abbinato rdf:resource="http://dbpedia.org/ontology/Cheese"/>
+        <abbinato rdf:resource="http://dbpedia.org/page/Beef"/>
+        <abbinato rdf:resource="http://dbpedia.org/page/Salami"/>
+        <abbinato rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Pasta"/>
+        <haAnnata rdf:resource="http://dbpedia.org/page/2015"/>
+        <haGradazione rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#13_gradi"/>
+        <haTemperatura rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#16-18_c°"/>
+        <haTipologia rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#rosso"/>
+        <haVitigno rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Aglianico"/>
+        <éProdotto rdf:resource="http://dbpedia.org/page/Campania"/>
+        <éServito rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Borgogna"/>
+        <Produttore>Cantina Del Tamburno</Produttore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Flute -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Flute">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Calice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Frutti_di_mare -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Frutti_di_mare">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Gran_Ballon -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Gran_Ballon">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Calice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Montefalco_Rosso -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Montefalco_Rosso">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino"/>
+        <abbinato rdf:resource="http://dbpedia.org/ontology/Cheese"/>
+        <abbinato rdf:resource="http://dbpedia.org/page/Beef"/>
+        <abbinato rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Pasta"/>
+        <haAnnata rdf:resource="http://dbpedia.org/page/2016"/>
+        <haGradazione rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#13_gradi"/>
+        <haTemperatura rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#16-18_c°"/>
+        <haTipologia rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#rosso"/>
+        <haVitigno rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Sangiovese"/>
+        <éProdotto rdf:resource="http://dbpedia.org/page/Umbria"/>
+        <éServito rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Ballon"/>
+        <Produttore>Arnaldo-Caprai</Produttore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Montepulciano -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Montepulciano">
+        <rdf:type rdf:resource="http://aims.fao.org/aos/agrovoc/vitigno"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Pasta -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Pasta">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Pesce -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Pesce">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Poggio_Degli_Uberti -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Poggio_Degli_Uberti">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino"/>
+        <abbinato rdf:resource="http://dbpedia.org/ontology/Cheese"/>
+        <abbinato rdf:resource="http://dbpedia.org/page/Beef"/>
+        <abbinato rdf:resource="http://dbpedia.org/page/Salami"/>
+        <abbinato rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Pasta"/>
+        <haAnnata rdf:resource="http://dbpedia.org/page/2017"/>
+        <haGradazione rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#13_gradi"/>
+        <haTemperatura rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#16-18_c°"/>
+        <haTipologia rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#rosso"/>
+        <haVitigno rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Sangiovese"/>
+        <éProdotto rdf:resource="http://dbpedia.org/page/Tuscany"/>
+        <éServito rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Borgogna"/>
+        <Produttore>Silla</Produttore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Renano -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Renano">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Calice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Risotto -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Risotto">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#cibo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Sangiovese -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Sangiovese">
+        <rdf:type rdf:resource="http://aims.fao.org/aos/agrovoc/vitigno"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Sautern -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Sautern">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Calice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Tufo -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Tufo">
+        <rdf:type rdf:resource="http://aims.fao.org/aos/agrovoc/vitigno"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Tulipano -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Tulipano">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Calice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#Tulipano_Piccolo -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Tulipano_Piccolo">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Calice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#ViniDeStefano -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#ViniDeStefano">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino"/>
+        <abbinato rdf:resource="http://dbpedia.org/ontology/Cheese"/>
+        <abbinato rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Frutti_di_mare"/>
+        <abbinato rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Pesce"/>
+        <abbinato rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Risotto"/>
+        <haAnnata rdf:resource="http://dbpedia.org/page/2014"/>
+        <haGradazione rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#14_gradi"/>
+        <haTemperatura rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#18-20_c°"/>
+        <haTipologia rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#bianco"/>
+        <haVitigno rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Tufo"/>
+        <éProdotto rdf:resource="http://dbpedia.org/page/Campania"/>
+        <éServito rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Ballon"/>
+        <Produttore>ViniDeStefano</Produttore>
+        <rdfs:label>ViniDeStefanoBianco</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#ViniDeStefanoRosso -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#ViniDeStefanoRosso">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino"/>
+        <abbinato rdf:resource="http://dbpedia.org/page/Beef"/>
+        <abbinato rdf:resource="http://dbpedia.org/page/Chicken"/>
+        <haAnnata rdf:resource="http://dbpedia.org/page/2016"/>
+        <haGradazione rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#14_gradi"/>
+        <haTemperatura rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#16-18_c°"/>
+        <haTipologia rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#rosso"/>
+        <haVitigno rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Campi_Taurasini"/>
+        <éProdotto rdf:resource="http://dbpedia.org/page/Campania"/>
+        <éServito rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#Ballon"/>
+        <Produttore>ViniDeStefano</Produttore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#bianco -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#bianco">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#questo_vino_è_buono -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#questo_vino_è_buono">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-upper/DescrizioneMateriaPrima"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#rosso -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#rosso">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#rosè -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#rosè">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#spumante -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#spumante">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#10_gradi -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#10_gradi">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#11_gradi -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#11_gradi">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#12_gradi -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#12_gradi">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#12,5_gradi -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#12,5_gradi">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#13_gradi -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#13_gradi">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#13,5_gradi -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#13,5_gradi">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#14_gradi -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#14_gradi">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#16-18_c° -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#16-18_c°">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#temperatura"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#17_gradi -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#17_gradi">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#18-20_c° -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#18-20_c°">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#temperatura"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#20_gradi -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#20_gradi">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#8_gradi -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#8_gradi">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#gradazione"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/food/ontology/disciplinare-vino#8-10_c° -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/food/ontology/disciplinare-vino#8-10_c°">
+        <rdf:type rdf:resource="http://w3id.org/food/ontology/disciplinare-vino#temperatura"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://aims.fao.org/aos/agrovoc/vitigno">
+        <rdfs:comment xml:lang="en">A fruit tree producing edible fruits  with green or purple skins; grow in clusters called grapes with a commercial significance for wine.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Descrive una particolare tipologia di materia prima che si riferisce ai possibili vitigni (ad esempio, Montepulciano, Malvasia, Moscato) usati per la produzione di un certo vino.</rdfs:comment>
+        <rdfs:label xml:lang="it">Vitigno</rdfs:label>
+        <rdfs:label xml:lang="en">Vitis vinifera</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/food/ontology/disciplinare-upper/DescrizioneMateriaPrima">
+        <rdfs:label xml:lang="it">DescrizioneMateriaPrima</rdfs:label>
+        <rdfs:label xml:lang="it">Description raw matarial</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Calice">
+        <rdfs:comment xml:lang="it">Il tipo di calice con cui va servito il vino</rdfs:comment>
+        <rdfs:label xml:lang="it">Calice</rdfs:label>
+        <rdfs:label xml:lang="en">Chalice</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/food/ontology/disciplinare-vino#Cantina">
+        <rdfs:comment xml:lang="it">Il luogo dove è stato prodotto il vino</rdfs:comment>
+        <rdfs:label xml:lang="en">Cellar</rdfs:label>
+        <rdfs:label xml:lang="it">Cantina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/food/ontology/disciplinare-vino#annata">
+        <rdfs:comment xml:lang="it">indica l&apos;annata del vino</rdfs:comment>
+        <rdfs:comment xml:lang="en">indicates the vintage of the wine</rdfs:comment>
+        <rdfs:label xml:lang="en">vintage</rdfs:label>
+        <rdfs:label xml:lang="it">Annata</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/food/ontology/disciplinare-vino#gradazione">
+        <rdfs:comment xml:lang="en">Indicates the level of alcohol present for a given wine</rdfs:comment>
+        <rdfs:label xml:lang="en">gradation</rdfs:label>
+        <rdfs:comment xml:lang="it">Indica il livello di alcol presente per un determinato vino</rdfs:comment>
+        <rdfs:label xml:lang="it">Gradazione</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/food/ontology/disciplinare-vino#temperatura">
+        <rdfs:comment xml:lang="en">indicates which is ideal temperature of service of wine</rdfs:comment>
+        <rdfs:label xml:lang="en">temperature</rdfs:label>
+        <rdfs:comment xml:lang="it">Indica la temperatura ideale per servire il vino</rdfs:comment>
+        <rdfs:label xml:lang="it">Temperatura</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino">
+        <rdfs:label xml:lang="en">wine protected name</rdfs:label>
+        <rdfs:comment xml:lang="it">Descrive le varie denominazioni che regolano i vini.</rdfs:comment>
+        <rdfs:label xml:lang="it">DenominazioneVino</rdfs:label>
+        <rdfs:comment xml:lang="en">It represents all the wine protected names.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino">
+        <rdfs:label xml:lang="en">wine type</rdfs:label>
+        <rdfs:comment xml:lang="en">It represents all the wine types (e.g. \&quot;red\&quot;, \&quot;white\&quot;).</rdfs:comment>
+        <rdfs:label xml:lang="it">TipologiaVino</rdfs:label>
+        <rdfs:comment xml:lang="it">Descrive le varie tipologie di vino (ad esempio, \&quot;rosso\&quot;, \&quot;bianco\&quot;, \&quot;spumante\&quot;).</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
