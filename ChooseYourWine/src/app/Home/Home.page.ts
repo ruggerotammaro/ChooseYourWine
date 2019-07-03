@@ -68,7 +68,7 @@ export class HomePage {
     let query = 'select+distinct+%3FConcept+where+%7B%5B%5D+a+%3FConcept%7D+LIMIT+10';
     this.http.get('http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query='+query+'&format=application%2Fsparql-results%2Bjson&CXML_redir_for_subjs=121&CXML_redir_for_hrefs=&timeout=30000&debug=on&run=+Run+Query+').pipe(map(
       res => res.json())).subscribe( data => {this.jsonObject = data;
-        console.log("dati "+this.jsonObject);
+        console.log("dati "+JSON.stringify(this.jsonObject));
       });
     };
 }
