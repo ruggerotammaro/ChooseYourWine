@@ -460,7 +460,7 @@ disciplinare-vino:Fidelis_2015 rdf:type owl:NamedIndividual ,
                                disciplinare-vino:haVitigno disciplinare-vino:Aglianico ;
                                disciplinare-vino:éProdotto <http://dbpedia.org/page/Campania> ;
                                disciplinare-vino:éServito disciplinare-vino:Borgogna ;
-                               disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img923/8684/Hy1T4v.png" ;
+                               disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img923/8684/Hy1T4v.png"^^xsd:anyURI ;
                                disciplinare-vino:Produttore "Cantina Del Tamburno" .
 
 
