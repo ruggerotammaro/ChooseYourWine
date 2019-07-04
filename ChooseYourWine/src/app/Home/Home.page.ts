@@ -68,8 +68,67 @@ export class HomePage {
     let query = 'select+distinct+%3FConcept+where+%7B%5B%5D+a+%3FConcept%7D+LIMIT+10';
     this.http.get('http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query='+query+'&format=application%2Fsparql-results%2Bjson&CXML_redir_for_subjs=121&CXML_redir_for_hrefs=&timeout=30000&debug=on&run=+Run+Query+').pipe(map(
       res => res.json())).subscribe( data => {this.jsonObject = data;
-        console.log("dati "+JSON.stringify(this.jsonObject));
+        this.sparkqlData=JSON.stringify(this.jsonObject);
+        console.log("dati "+this.sparkqlData);
       });
     };
+
+
+    public splittingString(string){
+      var x = string.split("/");
+      var element = x[x.length-1];
+      if(!element.includes("#")){
+        if(element.includes("_")){
+          var newElement = element.replace("_"," ");
+          alert (newElement);
+          return newElement;
+        }
+        return element;
+      }
+      else {
+        element = x[x.length-1].split("#")[1];
+        if(element.includes("_")){
+          var newElement = element.replace(/_/g," ");
+          return newElement;
+        }
+        return element;
+      }
+    }
+  /*
+    public getDetailsWine(wine) {
+      var obj = JSON.parse(wine);
+      document.getElementById("img").src = obj.results.bindings[0].immagine.value;
+      var luogo = this.splittingString(obj.results.bindings[0].luogo.value);
+      document.getElementById("luogo").innerHTML = luogo;
+      var produttore = this.splittingString(obj.results.bindings[0].produttore.value);
+      document.getElementById("produttore").innerHTML = produttore;
+      var tipologia = this.splittingString(obj.results.bindings[0].tipologia.value);
+      document.getElementById("tipologia").innerHTML = tipologia;
+      var annata = this.splittingString(obj.results.bindings[0].annata.value);
+      document.getElementById("annata").innerHTML = annata;
+      var vigneto = this.splittingString(obj.results.bindings[0].vigneto.value);
+      document.getElementById("vigneto").innerHTML = vigneto;
+      var gradazione = this.splittingString(obj.results.bindings[0].gradazione.value);
+      document.getElementById("gradazione").innerHTML = gradazione;
+      var temperaturaServizione = this.splittingString(obj.results.bindings[0].temperaturaServizione.value);
+      document.getElementById("temperaturaServizione").innerHTML = temperaturaServizione;
+      var calice = this.splittingString(obj.results.bindings[0].calice.value);
+      document.getElementById("calice").innerHTML = calice;	
+    }
+  */
+    public getAllWine(allWine) {
+      var obj = JSON.parse(allWine);
+      var n = obj.results.bindings.length;
+      for (var i = 0; i < n; i++) {
+        var node = document.createElement("SPAN");   
+        var br = document.createElement("br");              
+        //var textnode = document.createTextNode(obj.results.bindings[i].NomiVini.value);     splittingString(obj.results.bindings[0].annata.value);
+        var value = this.splittingString(obj.results.bindings[i].NomiVini.value);
+        var textnode = document.createTextNode(value); 
+        node.appendChild(textnode); 
+        node.appendChild(br);                                        
+        document.getElementById("uri").appendChild(node);     
+      }
+    }
 }
 
