@@ -12,7 +12,6 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpModule} from '@angular/http';
 
 
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

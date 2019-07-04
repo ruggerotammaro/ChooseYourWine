@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
-import { Http, RequestOptionsArgs, Headers, URLSearchParams } from '@angular/http';
+import { Http} from '@angular/http';
 import { map } from 'rxjs/operators';
+
 
 
 @Component({
@@ -9,78 +10,34 @@ import { map } from 'rxjs/operators';
   styleUrls: ['Home.page.scss']
 })
 
+
 export class HomePage {
-  constructor(private http: Http) { }
+
+  vini:any;
+  constructor(private http: Http) {
+    this.vini=[];
+   }
   private sparkqlData = null;
   public jsonObject: any;
-
- /* sparkql() {
-    let headers: Headers = new Headers({
-      'Content-type':'application/x-www-form-urlencoded',
-      'Accept':'application/json',
-      'Access-Control-Allow-Origin':'*',
-      'Access-Control-Allow-Credentials':'true',
-      'Access-Control-Allow-Headers':'Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
-    });
-
-    let params = new URLSearchParams();
-    let query = 'select+distinct+%3FConcept+where+%7B%5B%5D+a+%3FConcept%7D+LIMIT+10';
-    params.append('default-graph-uri','http://dbpedia.org');
-    params.append('named-graph-uri','NULL');
-    params.append('query', query);
-    params.append('format', 'application/sparql-results+json');
-    params.append('timeout', '0');
-    params.append('debug','on');
-    params.append('run','+Run+Query+');
-
-
-/*let query = 'PREFIX vino: <http://w3id.org/food/ontology/disciplinare-vino#> SELECT ?Nome ?Tipologia WHERE { ?x vino:haDenominazione ?Nome. ?Nome vino:haTipologia ?Tipologia. }';
-    params.append('default-graph-uri','http://localhost:8890/wineIMG');
-    params.append('named-graph-uri','NULL');
-    params.append('query', query);
-    params.append('format', 'application/sparql-results+json');
-    params.append('timeout', '0');
-    params.append('debug','on');
-    params.append('run','Run Query');*/
-
-   
-   /* console.log("paramas "+params);
-  
-    let options: RequestOptionsArgs = {
-      headers: headers,
-      params: params
-       };
-    this.http.get('http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query='+query+'&format=application%2Fsparql-results%2Bjson&CXML_redir_for_subjs=121&CXML_redir_for_hrefs=&timeout=30000&debug=on&run=+Run+Query+')
-    .pipe(map(Response =>Response.json()))
-      .subscribe(data => {
-        this.sparkql = JSON.parse(data['_body']).results;
-          console.log("data "+data);
-      });
-       console.log("sparql data "+this.sparkqlData);
-  }
-*/
-
-
-
-// fai la query su virtuoso poi prendi il link e lo sostituisci nella get, volendo metti in query la parte della query proprio
-// altimenti basta inserire tutto li.
+ 
   public par(){
-    let query = 'select+distinct+%3FConcept+where+%7B%5B%5D+a+%3FConcept%7D+LIMIT+10';
-    this.http.get('http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query='+query+'&format=application%2Fsparql-results%2Bjson&CXML_redir_for_subjs=121&CXML_redir_for_hrefs=&timeout=30000&debug=on&run=+Run+Query+').pipe(map(
+    this.vini=[];
+    let query = 'SELECT+%3FNomiVini+%0D%0AWHERE+%7B+%3Fx+vino%3AhaDenominazione+%3FNomiVini.';
+    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2FwineIMG&query=PREFIX+vino%3A+%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E+%0D%0A'+query+'+%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
       res => res.json())).subscribe( data => {this.jsonObject = data;
         this.sparkqlData=JSON.stringify(this.jsonObject);
-        console.log("dati "+this.sparkqlData);
+        this.getAllWine(this.sparkqlData);
+        
       });
     };
 
 
     public splittingString(string){
-      var x = string.split("/");
-      var element = x[x.length-1];
+      let x = string.split("/");
+      let element = x[x.length-1];
       if(!element.includes("#")){
         if(element.includes("_")){
           var newElement = element.replace("_"," ");
-          alert (newElement);
           return newElement;
         }
         return element;
@@ -88,7 +45,7 @@ export class HomePage {
       else {
         element = x[x.length-1].split("#")[1];
         if(element.includes("_")){
-          var newElement = element.replace(/_/g," ");
+          let newElement = element.replace(/_/g," ");
           return newElement;
         }
         return element;
@@ -117,18 +74,11 @@ export class HomePage {
     }
   */
     public getAllWine(allWine) {
-      var obj = JSON.parse(allWine);
-      var n = obj.results.bindings.length;
+      let obj = JSON.parse(allWine);
+      let n = obj.results.bindings.length;
       for (var i = 0; i < n; i++) {
-        var node = document.createElement("SPAN");   
-        var br = document.createElement("br");              
-        //var textnode = document.createTextNode(obj.results.bindings[i].NomiVini.value);     splittingString(obj.results.bindings[0].annata.value);
-        var value = this.splittingString(obj.results.bindings[i].NomiVini.value);
-        var textnode = document.createTextNode(value); 
-        node.appendChild(textnode); 
-        node.appendChild(br);                                        
-        document.getElementById("uri").appendChild(node);     
+        console.log(i);
+        this.vini.push(this.splittingString(obj.results.bindings[i].NomiVini.value));
       }
     }
-}
-
+  }

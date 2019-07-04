@@ -14,15 +14,14 @@
       </ion-card-header>
     </ion-card>
 
-    <ion-list lines="none" style="justify-content: center;">
+
 
       <ion-list-header> <ion-label> <h1> Consigliati </h1></ion-label> </ion-list-header>
 
-      <ion-item> <ion-button href="../wine-details/wine-details.page.html">Montepulciano</ion-button> </ion-item>
-      <ion-item> <ion-button href="../wine-details/wine-details.page.html">Aglianico</ion-button> </ion-item>
-      <ion-item> <ion-button href="../wine-details/wine-details.page.html">Falanghina</ion-button> </ion-item>
+  
+      <ion-item *ngFor='let vino of vini'>{{vino}}</ion-item>
 
-    </ion-list>
+  
 
     <button ion-button color="light" (click)="par()">PROVA QUERY</button>
     
