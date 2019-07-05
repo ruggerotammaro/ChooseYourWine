@@ -1,0 +1,38 @@
+table {
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+.imageWine{
+    height: 220px;
+    width: 190px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.imageChalice{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+}
+
+.nameWine{
+    font-size: 50px;
+    margin-top: 3%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    --background: #a31616;	
+    --border-color: #a31616;
+    --border-radius:10px;
+}
