@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { map } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -13,8 +13,11 @@ import { Router } from '@angular/router';
 export class HomePage {
 
   vini:any;
-  constructor(private http: Http, private router: Router) {
+  pas:any;
+  constructor(private http: Http, private router: Router,private route:ActivatedRoute) {
     this.vini=[];
+      let query = 'SELECT+%3FNomiVini+%0D%0AWHERE+%7B+%3Fx+vino%3AhaDenominazione+%3FNomiVini.';
+      this.query(query);
    }
   private sparkqlData = null;
   public jsonObject: any;
@@ -26,7 +29,9 @@ export class HomePage {
   public getAllWines(){
     this.vini=[];
     let query = 'SELECT+%3FNomiVini+%0D%0AWHERE+%7B+%3Fx+vino%3AhaDenominazione+%3FNomiVini.';
-    this.query(query);
+   this.query(query);
+   
+
     };
 
     query(query){
@@ -86,5 +91,17 @@ export class HomePage {
         console.log(i);
         this.vini.push(this.splittingString(obj.results.bindings[i].NomiVini.value));
       }
+    }
+
+    showWine(vino){
+      this.pas=this.convert(vino);
+      
+      console.log(this.pas);
+      //this.router.navigate(['/tabs/wine-details'],{queryParams:{key:this.pas}});
+    }
+
+    convert(vino){
+      var x= vino.replace(/ /g,"_");
+      return x;
     }
   }

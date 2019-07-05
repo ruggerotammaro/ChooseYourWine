@@ -15,7 +15,7 @@
     </ion-card>
 
     <ion-list-header> <ion-label> <h1> Consigliati </h1></ion-label> </ion-list-header>
-    <ion-item *ngFor='let vino of vini'> <ion-button>{{vino}}</ion-button></ion-item>
+    <ion-item *ngFor='let vino of vini'> <ion-button (click)=showWine(vino)>{{vino}}</ion-button></ion-item>
     <button ion-button (click)="getAllWines()">getAllWines</button> <br>
     <a routerLink="/tabs/wine-details">Dettagli vino</a>
 
