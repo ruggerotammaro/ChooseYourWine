@@ -62,33 +62,11 @@ export class HomePage {
         return element;
       }
     }
-  /*
-    public getDetailsWine(wine) {
-      var obj = JSON.parse(wine);
-      document.getElementById("img").src = obj.results.bindings[0].immagine.value;
-      var luogo = this.splittingString(obj.results.bindings[0].luogo.value);
-      document.getElementById("luogo").innerHTML = luogo;
-      var produttore = this.splittingString(obj.results.bindings[0].produttore.value);
-      document.getElementById("produttore").innerHTML = produttore;
-      var tipologia = this.splittingString(obj.results.bindings[0].tipologia.value);
-      document.getElementById("tipologia").innerHTML = tipologia;
-      var annata = this.splittingString(obj.results.bindings[0].annata.value);
-      document.getElementById("annata").innerHTML = annata;
-      var vigneto = this.splittingString(obj.results.bindings[0].vigneto.value);
-      document.getElementById("vigneto").innerHTML = vigneto;
-      var gradazione = this.splittingString(obj.results.bindings[0].gradazione.value);
-      document.getElementById("gradazione").innerHTML = gradazione;
-      var temperaturaServizione = this.splittingString(obj.results.bindings[0].temperaturaServizione.value);
-      document.getElementById("temperaturaServizione").innerHTML = temperaturaServizione;
-      var calice = this.splittingString(obj.results.bindings[0].calice.value);
-      document.getElementById("calice").innerHTML = calice;	
-    }
-  */
+
     public getAllWine(allWine) {
       let obj = JSON.parse(allWine);
       let n = obj.results.bindings.length;
       for (var i = 0; i < n; i++) {
-        console.log(i);
         this.vini.push(this.splittingString(obj.results.bindings[i].NomiVini.value));
       }
     }

@@ -8,8 +8,8 @@
   
 <ion-content>
     <ion-item>
-        <ion-label class="nameWine"> Montefalco Rosso </ion-label>
-        <!-- <ion-label  class="nameWine"> {{vini.denominazione}} </ion-label> -->
+        <!--<ion-label class="nameWine"> Montefalco Rosso </ion-label>-->
+        <ion-label  class="nameWine" *ngFor='let denom of denominazione'> {{denom}} </ion-label> 
     </ion-item>
   <ion-row>
     <ion-col col-auto>
@@ -17,49 +17,50 @@
         <tr>
           <td>
               <ion-item lines="none">
-                  <!-- <ion-img class="imageWine" src="/assets/images/wines/MontefalcoRosso.png"></ion-img> -->
-                  <ion-img class="imageWine" [src]="vini.immagine"></ion-img>
+                  <ion-img class="imageWine" *ngFor='let im of immagine' src={{im}}></ion-img>
+                 <!-- <ion-img class="imageWine" [src]="vini.immagine"></ion-img>-->
               </ion-item>
               <ion-item lines="none">
-                <!-- <ion-img class="imageChalice" src="/assets/images/chalices/Ballon.png"></ion-img> -->
-                <ion-img class="imageChalice" [src]="vino.calice">
+                 <ion-img class="imageChalice" src="/assets/images/chalices/Ballon.png"></ion-img>
+                <!--<ion-img class="imageChalice" [src]="vino.calice">-->
+                  <ion-label>{{calice}}</ion-label>
               </ion-item>  
           </td>
           <td>
               <ion-item>
                   <ion-label> Luogo: </ion-label>
                   <!--<ion-label> Umbria </ion-label>-->
-                  <ion-label> {{ vini.luogo }} </ion-label>
+                  <ion-label *ngFor='let l of luogo'> {{l}} </ion-label>
               </ion-item>
               <ion-item>
                   <ion-label> Produttore: </ion-label>
                   <!-- <ion-label> Arnaldo-Caprari </ion-label> -->
-                  <ion-label> {{ vini.produttore }} </ion-label> 
+                  <ion-label *ngFor='let prod of produttore'> {{prod}} </ion-label> 
               </ion-item>
               <ion-item>
                   <ion-label> Tipologia: </ion-label>
                   <!--<ion-label> rosso </ion-label>-->
-                  <ion-label> {{ vini.tipologia }} </ion-label> 
+                  <ion-label *ngFor='let tip of tipologia'> {{tip}} </ion-label> 
               </ion-item>
               <ion-item>
                   <ion-label> Annata: </ion-label>
                   <!--<ion-label> 2016 </ion-label>-->
-                  <ion-label> {{ vini.annata }} </ion-label>
+                  <ion-label *ngFor='let ann of annata'> {{ann}} </ion-label>
               </ion-item>
               <ion-item>
-                  <ion-label> Vigneto: </ion-label>
+                  <ion-label> Vitigno: </ion-label>
                   <!--<ion-label> Sangiovese </ion-label>-->
-                  <ion-label> {{ vini.vigneto }} </ion-label>
+                  <ion-label *ngFor='let vit of vitigno'> {{vit}} </ion-label>
               </ion-item>
               <ion-item>
                   <ion-label> Gradazione: </ion-label>
                   <!--<ion-label> 13 C° </ion-label>-->
-                  <ion-label> {{ vini.gradazione }} </ion-label> 
+                  <ion-label *ngFor='let grad of gradazione'> {{grad}} </ion-label> 
               </ion-item>
               <ion-item>
                   <ion-label> Temperatura di servizio: </ion-label>
                   <!--<ion-label> 16-18 C° </ion-label>-->
-                  <ion-label> {{ vini.temperaturaServizio }} </ion-label> 
+                  <ion-label *ngFor='let temp of temperaturaServizio'> {{temp}} </ion-label> 
               </ion-item>
           </td>
         </tr>
