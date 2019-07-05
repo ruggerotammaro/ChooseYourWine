@@ -8,22 +8,15 @@
 
 <ion-content>
     <ion-card class="welcome-card">
-      <ion-img src="/assets/wine.jpg" style="width:'350'; height:'140'"></ion-img>
+      <ion-img src="/assets/images/wine.jpg" style="width:'350'; height:'140'"></ion-img>
       <ion-card-header>
         <ion-card-title>Benvenuto in ChooseYourWine </ion-card-title>
       </ion-card-header>
     </ion-card>
 
-
-
-      <ion-list-header> <ion-label> <h1> Consigliati </h1></ion-label> </ion-list-header>
-
-  
-      <ion-item *ngFor='let vino of vini'>{{vino}}</ion-item>
-
-  
-
+    <ion-list-header> <ion-label> <h1> Consigliati </h1></ion-label> </ion-list-header>
+    <ion-item *ngFor='let vino of vini'> <ion-button>{{vino}}</ion-button></ion-item>
     <button ion-button (click)="getAllWines()">getAllWines</button> <br>
-    <a routerLink="/tabs/wine-details">HAI ROTTO IL CAZZO</a>
+    <a routerLink="/tabs/wine-details">Dettagli vino</a>
 
 </ion-content>
