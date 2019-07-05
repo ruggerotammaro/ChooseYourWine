@@ -1,7 +1,7 @@
-import { Component} from '@angular/core';
-import { Http} from '@angular/http';
+import { Component } from '@angular/core';
+import { Http } from '@angular/http';
 import { map } from 'rxjs/operators';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,17 +10,20 @@ import { map } from 'rxjs/operators';
   styleUrls: ['Home.page.scss']
 })
 
-
 export class HomePage {
 
   vini:any;
-  constructor(private http: Http) {
+  constructor(private http: Http, private router: Router) {
     this.vini=[];
    }
   private sparkqlData = null;
   public jsonObject: any;
- 
-  public par(){
+/*
+  go() {
+    this.router.navigateByUrl();
+  }
+ */
+  public getAllWines(){
     this.vini=[];
     let query = 'SELECT+%3FNomiVini+%0D%0AWHERE+%7B+%3Fx+vino%3AhaDenominazione+%3FNomiVini.';
     this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2FwineIMG&query=PREFIX+vino%3A+%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E+%0D%0A'+query+'+%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(

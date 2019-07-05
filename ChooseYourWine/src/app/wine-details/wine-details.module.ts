@@ -7,19 +7,12 @@ import { IonicModule } from '@ionic/angular';
 
 import { WineDetailsPage } from './wine-details.page';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: WineDetailsPage
-  }
-];
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild([{path: '', component: WineDetailsPage}])
   ],
   declarations: [WineDetailsPage]
 })
