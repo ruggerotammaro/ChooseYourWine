@@ -44,6 +44,15 @@ const routes: Routes = [
         ]
       },
       {
+        path:'list-wine',
+        children:[
+          {
+            path:'',
+            loadChildren:'../list-wine/list-wine.module#ListWinePageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/Home',
         pathMatch: 'full'

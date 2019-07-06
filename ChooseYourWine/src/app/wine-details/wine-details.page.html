@@ -23,7 +23,7 @@
               <ion-item lines="none">
                  <ion-img class="imageChalice" src="/assets/images/chalices/Ballon.png"></ion-img>
                 <!--<ion-img class="imageChalice" [src]="vino.calice">-->
-                  <ion-label>{{calice}}</ion-label>
+                  <ion-label position='stacked' *ngFor='let c of calice'>{{c}}</ion-label>
               </ion-item>  
           </td>
           <td>

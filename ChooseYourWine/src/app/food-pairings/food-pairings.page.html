@@ -3,7 +3,22 @@
     <ion-title>Abbinamenti</ion-title>
   </ion-toolbar>
 </ion-header>
-
+ 
 <ion-content>
-
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/images/wine.jpg" style="width:'350'; height:'140'"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Benvenuto in ChooseYourWine </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+          <div class="grid-full">
+            <ion-row>
+              <ion-col *ngFor='let cibo of abbina'>
+                <ion-card >
+                  <img class="imageChalice" src="/assets/images/chalices/Ballon.png" />
+                  <ion-card-title>{{cibo}}</ion-card-title>
+                </ion-card>
+              </ion-col> 
+            </ion-row>
+          </div>
 </ion-content>
