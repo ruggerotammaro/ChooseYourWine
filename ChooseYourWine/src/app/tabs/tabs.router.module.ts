@@ -53,6 +53,15 @@ const routes: Routes = [
         ]
       },
       {
+        path:'pairings',
+        children:[
+          {
+            path:'',
+            loadChildren:'../pairings/pairings.module#ListWinePageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/Home',
         pathMatch: 'full'

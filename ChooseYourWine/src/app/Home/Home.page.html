@@ -14,7 +14,9 @@
       </ion-card-header>
     </ion-card>
 
-    <ion-list-header> <ion-label> <h1> Consigliati </h1></ion-label> </ion-list-header>
-    <ion-item *ngFor='let vino of vini'> <ion-button (click)=showWine(vino)>{{vino}}</ion-button></ion-item>
+    <div class="center">
+        <ion-list-header> <ion-label> <h1> Consigliati </h1></ion-label> </ion-list-header>
+        <ion-item  lines="none" *ngFor='let vino of vini'> <ion-button (click)=showWine(vino)>{{vino}}</ion-button></ion-item>
+    </div>
 
 </ion-content>
