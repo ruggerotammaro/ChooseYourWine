@@ -16,7 +16,7 @@
   <div class="grid-full">
     <ion-row>
       <ion-col *ngFor='let cibo of abbina'>
-        <ion-card >
+        <ion-card (click)="showWine(cibo)">
           <img class="imageChalice" src="/assets/images/chalices/Ballon.png" />
           <ion-card-title>{{cibo}}</ion-card-title>
         </ion-card>

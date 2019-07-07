@@ -64,4 +64,16 @@ export class FoodPairingsPage{
     }
   }
   }
+
+  showWine(vino){
+    this.pas=this.convert(vino);
+    
+    console.log(this.pas);
+    this.router.navigate(['/tabs/list-wine',{id:this.pas}])
+  }
+
+  convert(vino){
+    var x= vino.replace(/ /g,"_");
+    return x;
+  }
 }

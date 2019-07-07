@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { map } from 'rxjs/operators';
 import { Router,ActivatedRoute } from '@angular/router';
-import { Url } from 'url';
-import { visitSiblingRenderNodes } from '@angular/core/src/view/util';
 
 @Component({
   selector: 'app-wine-details',
@@ -26,11 +24,10 @@ export class WineDetailsPage {
   gradazione:any;
   temperaturaServizio:any;
   calice:any;
+  pas:any;
   constructor(private http: Http,private router: Router,private route:ActivatedRoute) {
 
- // this.route.queryParams.subscribe(params => {
-  //  this.vino = params['key'];
-//})
+  this.vino=this.route.snapshot.paramMap.get("id");
   this.denominazione=[];
   this.immagine=[];
   this.luogo=[];
@@ -41,7 +38,6 @@ export class WineDetailsPage {
   this.gradazione=[];
   this.temperaturaServizio=[];
   this.calice=[];
-  this.vino='Fidelis_2015';
   let query='SELECT+%3Fdenominazione%2C%3Fimmagine%2C+%3Fluogo%2C+%3Fproduttore%2C+%3Ftipologia%2C+%3Fannata%2C+%3Fvitigno%2C+%3Fgradazione%2C+%3Fcalice%2C+%3FtemperaturaServizio%0D%0A+WHERE+%7B+%0D%0A++%3Fx+vino%3AhaDenominazione+%3Fdenominazione.%0D%0A++FILTER+regex%28%3Fdenominazione%2C+%22'+this.vino+'%22%29.%0D%0A+%3Fdenominazione+vino%3AImmagineVino+%3Fimmagine.%0D%0A+%3Fdenominazione+vino%3A%C3%A9Prodotto+%3Fluogo.+%0D%0A+%3Fdenominazione+vino%3AProduttore+%3Fproduttore.%0D%0A+%3Fdenominazione+vino%3AhaTipologia+%3Ftipologia.%0D%0A+%3Fdenominazione+vino%3AhaAnnata+%3Fannata.%0D%0A+%3Fdenominazione+vino%3AhaVitigno+%3Fvitigno.%0D%0A+%3Fdenominazione+vino%3AhaGradazione+%3Fgradazione.%0D%0A+%3Fdenominazione+vino%3A%C3%A9Servito+%3Fcalice.%0D%0A+%3Fdenominazione+vino%3AhaTemperatura+%3FtemperaturaServizio.';
   this.query(query);
   }
@@ -91,4 +87,15 @@ export class WineDetailsPage {
       }
     }
 
+
+    showPairings(nome){
+      this.pas=this.convert(nome);
+  this.router.navigate(['/tabs/pairings',{id:this.pas}])
+    }
+
+
+  convert(vino){
+    var x= vino.replace(/ /g,"_");
+    return x;
+  }
 }

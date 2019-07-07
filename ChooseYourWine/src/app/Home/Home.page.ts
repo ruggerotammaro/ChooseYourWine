@@ -75,7 +75,7 @@ export class HomePage {
       this.pas=this.convert(vino);
       
       console.log(this.pas);
-      //this.router.navigate(['/tabs/wine-details'],{queryParams:{key:this.pas}});
+      this.router.navigate(['/tabs/wine-details',{id:this.pas}])
     }
 
     convert(vino){

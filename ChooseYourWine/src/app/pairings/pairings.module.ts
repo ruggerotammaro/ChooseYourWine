@@ -7,19 +7,13 @@ import { IonicModule } from '@ionic/angular';
 
 import { PairingsPage } from './pairings.page';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: PairingsPage
-  }
-];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild([{path: '', component: PairingsPage}])
   ],
   declarations: [PairingsPage]
 })

@@ -75,7 +75,7 @@
   </ion-row>
 
   <div text-center>
-      <ion-button (click)=showFoodPairings(vini.denominazione)> Abbinamento </ion-button>
+      <ion-button *ngFor='let denom of denominazione' (click)=showPairings(denom)>Abbinamento </ion-button>
   </div>
 
 </ion-content>

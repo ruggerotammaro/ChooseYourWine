@@ -57,7 +57,7 @@ const routes: Routes = [
         children:[
           {
             path:'',
-            loadChildren:'../pairings/pairings.module#ListWinePageModule'
+            loadChildren:'../pairings/pairings.module#PairingsPageModule'
           }
         ]
       },
