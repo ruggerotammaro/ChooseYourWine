@@ -11,10 +11,16 @@
           <ion-card-title>Benvenuto in ChooseYourWine </ion-card-title>
         </ion-card-header>
       </ion-card>
-
-    <div text-center *ngFor='let abb of abbinamenti'>
-        
-    </div>
-  
+<h1>cibi abbinati a {{v}}</h1>
+<div class="grid-full">
+  <ion-row>
+    <ion-col *ngFor='let cibo of cibi'>
+      <ion-card >
+          <ion-img class="imageWine"  src={{cibo.immagine}}></ion-img>
+        <ion-card-title>{{cibo.nome}}</ion-card-title>
+      </ion-card>
+    </ion-col> 
+  </ion-row>
+</div>
 
 </ion-content>

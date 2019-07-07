@@ -90,7 +90,7 @@ export class WineDetailsPage {
 
     showPairings(nome){
       this.pas=this.convert(nome);
-  this.router.navigate(['/tabs/pairings',{id:this.pas}])
+   this.router.navigate(['/tabs/pairings',{id:this.pas}]);
     }
 
 

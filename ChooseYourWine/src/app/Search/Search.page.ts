@@ -14,8 +14,8 @@ export class SearchPage {
   pas:any;
   constructor(private http: Http, private router: Router,private route:ActivatedRoute) {
     this.vini=[];
-      let query = 'SELECT+%3FNomiVini+%0D%0AWHERE+%7B+%3Fx+vino%3AhaDenominazione+%3FNomiVini.';
-      this.query(query);
+    let query = 'SELECT+%3FNomiVini+%0D%0AWHERE+%7B+%3Fx+vino%3AhaDenominazione+%3FNomiVini.';
+    this.query(query);    
    }
   private sparkqlData = null;
   public jsonObject: any;
@@ -54,5 +54,18 @@ export class SearchPage {
     for (var i = 0; i < n; i++) {
       this.vini.push(this.splittingString(obj.results.bindings[i].NomiVini.value));
     }
+  }
+
+
+  showWine(vino){
+    this.pas=this.convert(vino);
+    
+    console.log(this.pas);
+    this.router.navigate(['/tabs/wine-details',{id:this.pas}])
+  }
+
+  convert(vino){
+    var x= vino.replace(/ /g,"_");
+    return x;
   }
 }

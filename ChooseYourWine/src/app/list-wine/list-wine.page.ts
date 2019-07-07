@@ -13,10 +13,13 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class ListWinePage {
   constructor(private http: Http,private router: Router,private route:ActivatedRoute) { 
 
-  let cibo=this.route.snapshot.paramMap.get("id");
-  let query = 'select+%3Fcibo+%3Fdenominazione+%3Fimmagine%0D%0Awhere+%7B%0D%0A%3Fy+vino%3AhaDenominazione+%3Fdenominazione.%0D%0A%3Fdenominazione+vino%3AImmagineVino+%3Fimmagine.%0D%0A%3Fdenominazione+vino%3Aabbinato+%3Fcibo.%0D%0AFILTER+regex%28%3Fcibo%2C%22'+cibo+'%22%29.';
+  this.cibo=this.route.snapshot.paramMap.get("id");
+  this.c=this.splittingString(this.cibo);
+  let query = 'select+%3Fcibo+%3Fdenominazione+%3Fimmagine%0D%0Awhere+%7B%0D%0A%3Fy+vino%3AhaDenominazione+%3Fdenominazione.%0D%0A%3Fdenominazione+vino%3AImmagineVino+%3Fimmagine.%0D%0A%3Fdenominazione+vino%3Aabbinato+%3Fcibo.%0D%0AFILTER+regex%28%3Fcibo%2C%22'+this.cibo+'%22%29.';
   this.query(query);
 }
+cibo:any;
+c:any;
 private sparkqlData = null;
 public jsonObject: any;
 vini:Array<{denominazione:any,immagine:any}>=[];

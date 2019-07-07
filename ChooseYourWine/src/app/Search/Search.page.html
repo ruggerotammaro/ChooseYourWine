@@ -22,16 +22,21 @@
                         <ion-img class="wine_icon" src="/assets/icon/wine_icon.png"> </ion-img>
                     </td>
                     <td>
-                        <ion-input class="ion-input" placeholder="Aglianico" type="text" required></ion-input> 
+                        <ion-searchbar animated placeholder="nome vino"></ion-searchbar>
                     </td>
                     <td>
-                        <ion-img class="search_icon" src="/assets/icon/search.png" onclick="getList()" > </ion-img>
+                        <ion-img class="search_icon" src="/assets/icon/search.png" (click)="search()" > </ion-img>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ion-list *ngFor='let vino of vini'>
+                            <ion-item (click)=showWine(vino)>{{vino}}</ion-item>
+                        </ion-list>
                     </td>
                 </tr>
             </table>
         </ion-col>
      </ion-row>
-
-  
   
 </ion-content>
