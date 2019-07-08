@@ -6,17 +6,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content text-center>
     <ion-card class="welcome-card">
-      <ion-img src="/assets/images/wine.jpg" style="width:'350'; height:'140'"></ion-img>
+      <ion-img src="../assets/images/wine.jpg" style="width:'350'; height:'140'"></ion-img>
       <ion-card-header>
         <ion-card-title>Benvenuto in ChooseYourWine </ion-card-title>
       </ion-card-header>
     </ion-card>
 
-    <div class="center">
-        <ion-list-header> <ion-label> <h1> Consigliati </h1></ion-label> </ion-list-header>
-        <ion-item  lines="none" *ngFor='let vino of vini'> <ion-button (click)=showWine(vino)>{{vino}}</ion-button></ion-item>
-    </div>
-
+    <ion-label> <h1> Consigliati </h1></ion-label> 
+        <div class="center" *ngFor='let vino of vini' lines="none" >
+         <ion-button class="button" (click)=showWine(vino)>{{vino}}</ion-button>   
+        </div>
+        
 </ion-content>

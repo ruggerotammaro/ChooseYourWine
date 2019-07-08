@@ -6,4 +6,20 @@
 .center{
   margin-left: auto;
   margin-right: auto;
+  display: block;
+  justify-content: center;
+}
+
+h1{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.button{
+  color: black;
+  --background: #d8d8d8;	
+  --border-color: #d8d8d8;
+  --background-activated: #d8d8d8;
+  --background-hover: #ececec; 
+  --border-radius:10px;
 }
