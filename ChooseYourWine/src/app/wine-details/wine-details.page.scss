@@ -1,3 +1,8 @@
+.welcome-card ion-img {
+    max-height: 35vh;
+    overflow: hidden;
+}
+
 table {
     width: 50%;
     height: 50px;
@@ -5,6 +10,7 @@ table {
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;  
+    margin-bottom: 20px;
 }
 
 .imageWine{
@@ -31,8 +37,10 @@ table {
 .button{
     margin-top: 20px;
     margin-bottom: 20px;
-    color: white;
-    --background: #a31616;	
-    --border-color: #a31616;
+    color: black;
+    --background: #d8d8d8;	
+    --border-color: #d8d8d8;
+    --background-activated: #d8d8d8;
+    --background-hover: #ececec; 
     --border-radius:10px;
 }

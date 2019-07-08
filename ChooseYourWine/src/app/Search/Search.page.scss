@@ -12,9 +12,13 @@ table {
     margin-right: auto;  
 }
 
+ion-list{
+    text-align: center;
+}
+
 ion-input {
-    color: #a31616;
-    border: 1.5px solid #a31616;
+    --color: black;
+    border: 1.5px solid #d8d8d8;
     text-align: center;
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
@@ -32,3 +36,13 @@ ion-input {
     margin-left: 5px; 
 }
 
+.button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+    --background: #d8d8d8;	
+    --border-color: #d8d8d8;
+    --background-activated: #d8d8d8;
+    --background-hover: #ececec; 
+    --border-radius:10px;
+}
