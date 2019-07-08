@@ -16,26 +16,14 @@ export class HomePage {
   pas:any;
   constructor(private http: Http, private router: Router,private route:ActivatedRoute) {
     this.vini=[];
-      let query = 'SELECT+%3FNomiVini+%0D%0AWHERE+%7B+%3Fx+vino%3AhaDenominazione+%3FNomiVini.';
+      let query = 'SELECT+%3FNomiVini+%0D%0AWHERE+%7B+%3Fx+vino%3AhaDenominazione+%3FNomiVini.%0D%0AFILTER+regex%28%3FNomiVini%2C%22Vini_De_Stefano%22%29.';
       this.query(query);
    }
   private sparkqlData = null;
   public jsonObject: any;
-/*
-  go() {
-    this.router.navigateByUrl();
-  }
- */
-  public getAllWines(){
-    this.vini=[];
-    let query = 'SELECT+%3FNomiVini+%0D%0AWHERE+%7B+%3Fx+vino%3AhaDenominazione+%3FNomiVini.';
-    this.query(query);
-   
-
-    };
 
     query(query){
-      this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2FwineIMG&query=PREFIX+vino%3A+%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E+%0D%0A'+query+'+%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
+      this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2FwineMR&query=PREFIX+vino%3A+%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E+%0D%0A'+query+'+%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
       res => res.json())).subscribe( data => {this.jsonObject = data;
         this.sparkqlData=JSON.stringify(this.jsonObject);
         this.getAllWine(this.sparkqlData);      

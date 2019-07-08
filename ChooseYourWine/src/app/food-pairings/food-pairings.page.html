@@ -21,17 +21,16 @@
               <tr *ngFor='let cibo of abbina'>
                 <td>
                    <!-- Nome cibo  --> 
-                   <ion-label class="nameWine"> {{cibo}} </ion-label>
+                   <ion-label class="nameWine"> {{cibo.nome}} </ion-label>
                 </td>
                 <td>
                    <!-- Immagine cibo  --> 
-                   <!-- <ion-img class="imageWine" src={{cibo.immagine}}></ion-img> -->
-                   <ion-img class="imageFood" src="assets/food/meat.png"></ion-img>
+                   <ion-img class="imageWine" src={{cibo.immagine}}></ion-img> 
                 </td>
                 
                 <td>
                    <!-- Lista vini --> 
-                   <ion-button class="button" (click)=showWine(cibo)> Lista vini </ion-button>   
+                   <ion-button class="button" (click)=showWine(cibo.nome)> Lista vini </ion-button>   
                 </td>
               </tr>
             </table>
