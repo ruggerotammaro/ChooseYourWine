@@ -10,11 +10,9 @@
 
 <http://w3id.org/food/ontology/disciplinare-vino> rdf:type owl:Ontology ;
                                                    owl:imports <http://w3id.org/food/ontology/denominazione-italiana> ;
-                                                   dc:contributor "Aldo Gangemi" ,
-                                                                  "Giorgia Lodi" ,
-                                                                  "Luigi Asprino" ;
-                                                   dc:creator "Silvio Peroni" ;
-                                                   dc:date "2015-05-24" ;
+                                                   dc:contributor "Mariangela Petraglia" ;
+                                                   dc:creator "Ruggero Tammaro" ;
+                                                   dc:date "2019-06-10" ;
                                                    dc:description <http://w3id.org/food/img/vino.png> ;
                                                    dc:title "Ontologia dei Disciplinari sul vino"@it ,
                                                             "Ontology of the policy documents for wine products"@en .
@@ -128,6 +126,19 @@ disciplinare-vino:Cantina rdf:type owl:DatatypeProperty ;
                           rdfs:range xsd:string .
 
 
+###  http://w3id.org/food/ontology/disciplinare-vino#ImmagineCalice
+disciplinare-vino:ImmagineCalice rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                 rdfs:domain disciplinare-vino:Calice ;
+                                 rdfs:range xsd:anyURI .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#ImmagineCibo
+disciplinare-vino:ImmagineCibo rdf:type owl:DatatypeProperty ;
+                               rdfs:domain disciplinare-vino:cibo ;
+                               rdfs:range xsd:anyURI .
+
+
 ###  http://w3id.org/food/ontology/disciplinare-vino#ImmagineVino
 disciplinare-vino:ImmagineVino rdf:type owl:DatatypeProperty ;
                                rdfs:domain <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
@@ -183,10 +194,6 @@ disciplinare-vino:temperatura rdf:type owl:DatatypeProperty ;
 
 ###  http://aims.fao.org/aos/agrovoc/vitigno
 <http://aims.fao.org/aos/agrovoc/vitigno> rdf:type owl:Class .
-
-
-###  http://w3id.org/food/ontology/disciplinare-upper/DescrizioneMateriaPrima
-<http://w3id.org/food/ontology/disciplinare-upper/DescrizioneMateriaPrima> rdf:type owl:Class .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-upper/Prodotto
@@ -271,19 +278,12 @@ owl:Thing rdf:type owl:Class .
 #    Individuals
 #################################################################
 
-###  http://dbpedia.org/ontology/Cheese
-<http://dbpedia.org/ontology/Cheese> rdf:type owl:NamedIndividual ,
-                                              disciplinare-vino:cibo .
-
-
 ###  http://dbpedia.org/ontology/Wine
 <http://dbpedia.org/ontology/Wine> rdf:type owl:NamedIndividual ,
                                             <http://w3id.org/food/ontology/disciplinare-vino/vino> ;
                                    disciplinare-vino:haDenominazione disciplinare-vino:Fidelis_2015 ,
                                                                      disciplinare-vino:Montefalco_Rosso ,
-                                                                     disciplinare-vino:Poggio_Degli_Uberti ,
-                                                                     disciplinare-vino:ViniDeStefano ,
-                                                                     disciplinare-vino:ViniDeStefanoRosso .
+                                                                     disciplinare-vino:Poggio_Degli_Uberti .
 
 
 ###  http://dbpedia.org/page/Abruzzo
@@ -291,19 +291,14 @@ owl:Thing rdf:type owl:Class .
                                            disciplinare-vino:Cantina .
 
 
-###  http://dbpedia.org/page/Bacon
-<http://dbpedia.org/page/Bacon> rdf:type owl:NamedIndividual ,
-                                         disciplinare-vino:cibo .
-
-
-###  http://dbpedia.org/page/Beef
-<http://dbpedia.org/page/Beef> rdf:type owl:NamedIndividual ,
-                                        disciplinare-vino:cibo .
-
-
 ###  http://dbpedia.org/page/Campania
 <http://dbpedia.org/page/Campania> rdf:type owl:NamedIndividual ,
                                             disciplinare-vino:Cantina .
+
+
+###  http://dbpedia.org/page/Champagne
+<http://dbpedia.org/page/Champagne> rdf:type owl:NamedIndividual ,
+                                             <http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino> .
 
 
 ###  http://dbpedia.org/page/Chardonnay
@@ -311,54 +306,14 @@ owl:Thing rdf:type owl:Class .
                                               <http://aims.fao.org/aos/agrovoc/vitigno> .
 
 
-###  http://dbpedia.org/page/Chicken
-<http://dbpedia.org/page/Chicken> rdf:type owl:NamedIndividual ,
-                                           disciplinare-vino:cibo .
-
-
 ###  http://dbpedia.org/page/Emilia-Romagna
 <http://dbpedia.org/page/Emilia-Romagna> rdf:type owl:NamedIndividual ,
                                                   disciplinare-vino:Cantina .
 
 
-###  http://dbpedia.org/page/Ham
-<http://dbpedia.org/page/Ham> rdf:type owl:NamedIndividual ,
-                                       disciplinare-vino:cibo .
-
-
-###  http://dbpedia.org/page/Italian_sausage
-<http://dbpedia.org/page/Italian_sausage> rdf:type owl:NamedIndividual ,
-                                                   disciplinare-vino:cibo .
-
-
 ###  http://dbpedia.org/page/Lazio
 <http://dbpedia.org/page/Lazio> rdf:type owl:NamedIndividual ,
                                          disciplinare-vino:Cantina .
-
-
-###  http://dbpedia.org/page/Lombardy
-<http://dbpedia.org/page/Lombardy> rdf:type owl:NamedIndividual ,
-                                            disciplinare-vino:Cantina .
-
-
-###  http://dbpedia.org/page/Piedmont
-<http://dbpedia.org/page/Piedmont> rdf:type owl:NamedIndividual ,
-                                            disciplinare-vino:Cantina .
-
-
-###  http://dbpedia.org/page/Salami
-<http://dbpedia.org/page/Salami> rdf:type owl:NamedIndividual ,
-                                          disciplinare-vino:cibo .
-
-
-###  http://dbpedia.org/page/Sicily
-<http://dbpedia.org/page/Sicily> rdf:type owl:NamedIndividual ,
-                                          disciplinare-vino:Cantina .
-
-
-###  http://dbpedia.org/page/Tuscany
-<http://dbpedia.org/page/Tuscany> rdf:type owl:NamedIndividual ,
-                                           disciplinare-vino:Cantina .
 
 
 ###  http://dbpedia.org/page/Umbria
@@ -411,29 +366,67 @@ owl:Thing rdf:type owl:Class .
                                         disciplinare-vino:annata .
 
 
-###  http://dbpedia.org/page/Trentino-Alto_Adige/Südtirol
-<http://dbpedia.org/page/Trentino-Alto_Adige/Südtirol> rdf:type owl:NamedIndividual ,
-                                                                disciplinare-vino:Cantina .
-
-
 ###  http://w3id.org/food/ontology/disciplinare-vino#Aglianico
 disciplinare-vino:Aglianico rdf:type owl:NamedIndividual ,
                                      <http://aims.fao.org/aos/agrovoc/vitigno> .
 
 
+###  http://w3id.org/food/ontology/disciplinare-vino#Aperitivo
+disciplinare-vino:Aperitivo rdf:type owl:NamedIndividual ,
+                                     disciplinare-vino:cibo ;
+                            disciplinare-vino:ImmagineCibo "https://imagizer.imageshack.com/img924/5962/2YE6mA.jpg" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Arneis
+disciplinare-vino:Arneis rdf:type owl:NamedIndividual ,
+                                  <http://aims.fao.org/aos/agrovoc/vitigno> .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Arrosto
+disciplinare-vino:Arrosto rdf:type owl:NamedIndividual ,
+                                   disciplinare-vino:cibo ;
+                          disciplinare-vino:ImmagineCibo "https://imagizer.imageshack.com/img924/1892/utPHHK.jpg" .
+
+
 ###  http://w3id.org/food/ontology/disciplinare-vino#Ballon
 disciplinare-vino:Ballon rdf:type owl:NamedIndividual ,
-                                  disciplinare-vino:Calice .
+                                  disciplinare-vino:Calice ;
+                         disciplinare-vino:ImmagineCalice "https://imagizer.imageshack.com/img923/9343/EF3krC.png" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Barbaresco
+disciplinare-vino:Barbaresco rdf:type owl:NamedIndividual ,
+                                      disciplinare-vino:Calice ;
+                             disciplinare-vino:ImmagineCalice "https://imagizer.imageshack.com/img924/183/6IRgwD.png" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Bordeaux_Rosso
+disciplinare-vino:Bordeaux_Rosso rdf:type owl:NamedIndividual ,
+                                          disciplinare-vino:Calice ;
+                                 disciplinare-vino:ImmagineCalice "https://imagizer.imageshack.com/img921/6223/4Ed610.png" .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Borgogna
 disciplinare-vino:Borgogna rdf:type owl:NamedIndividual ,
-                                    disciplinare-vino:Calice .
+                                    disciplinare-vino:Calice ;
+                           disciplinare-vino:ImmagineCalice "https://imagizer.imageshack.com/img923/7589/3XXxwr.png" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Cacciagione
+disciplinare-vino:Cacciagione rdf:type owl:NamedIndividual ,
+                                       disciplinare-vino:cibo ;
+                              disciplinare-vino:ImmagineCibo "https://imagizer.imageshack.com/img923/6032/hHNFcH.jpg" .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Campi_Taurasini
 disciplinare-vino:Campi_Taurasini rdf:type owl:NamedIndividual ,
                                            <http://aims.fao.org/aos/agrovoc/vitigno> .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Carne_rossa
+disciplinare-vino:Carne_rossa rdf:type owl:NamedIndividual ,
+                                       disciplinare-vino:cibo ;
+                              disciplinare-vino:ImmagineCibo "https://imagizer.imageshack.com/img924/5703/6g3CEU.jpg" .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Chianti
@@ -443,18 +436,52 @@ disciplinare-vino:Chianti rdf:type owl:NamedIndividual ,
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Coppa
 disciplinare-vino:Coppa rdf:type owl:NamedIndividual ,
-                                 disciplinare-vino:Calice .
+                                 disciplinare-vino:Calice ;
+                        disciplinare-vino:ImmagineCalice "https://imagizer.imageshack.com/img924/5686/5vcnmd.png" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#DUBL
+disciplinare-vino:DUBL rdf:type owl:NamedIndividual ,
+                                <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
+                       disciplinare-vino:abbinato disciplinare-vino:Aperitivo ,
+                                                  disciplinare-vino:Carne_rossa ,
+                                                  disciplinare-vino:Formaggi ,
+                                                  disciplinare-vino:Pasta ,
+                                                  disciplinare-vino:Pizza ,
+                                                  disciplinare-vino:Risotto ,
+                                                  disciplinare-vino:Salumi ;
+                       disciplinare-vino:haAnnata <http://dbpedia.org/page/2017> ;
+                       disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#12,5> ;
+                       disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#8-10_c°> ;
+                       disciplinare-vino:haTipologia disciplinare-vino:spumante ;
+                       disciplinare-vino:haVitigno disciplinare-vino:Aglianico ;
+                       disciplinare-vino:éProdotto <http://dbpedia.org/page/Campania> ;
+                       disciplinare-vino:éServito disciplinare-vino:Tulipano_Piccolo ;
+                       disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img923/6371/heEOPo.png" ;
+                       disciplinare-vino:Produttore "Feudi Di San Gregorio" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Dolce
+disciplinare-vino:Dolce rdf:type owl:NamedIndividual ,
+                                 disciplinare-vino:cibo ;
+                        disciplinare-vino:ImmagineCibo "https://imagizer.imageshack.com/img922/9649/PXy0H5.jpg" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Epernay
+disciplinare-vino:Epernay rdf:type owl:NamedIndividual ,
+                                   disciplinare-vino:Cantina .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Fidelis_2015
 disciplinare-vino:Fidelis_2015 rdf:type owl:NamedIndividual ,
                                         <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
-                               disciplinare-vino:abbinato <http://dbpedia.org/ontology/Cheese> ,
-                                                          <http://dbpedia.org/page/Beef> ,
-                                                          <http://dbpedia.org/page/Salami> ,
-                                                          disciplinare-vino:Pasta ;
+                               disciplinare-vino:abbinato disciplinare-vino:Carne_rossa ,
+                                                          disciplinare-vino:Formaggi ,
+                                                          disciplinare-vino:Pasta ,
+                                                          disciplinare-vino:Risotto ,
+                                                          disciplinare-vino:Salumi ;
                                disciplinare-vino:haAnnata <http://dbpedia.org/page/2015> ;
-                               disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#13_gradi> ;
+                               disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#13> ;
                                disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#16-18_c°> ;
                                disciplinare-vino:haTipologia disciplinare-vino:rosso ;
                                disciplinare-vino:haVitigno disciplinare-vino:Aglianico ;
@@ -464,29 +491,115 @@ disciplinare-vino:Fidelis_2015 rdf:type owl:NamedIndividual ,
                                disciplinare-vino:Produttore "Cantina Del Tamburno" .
 
 
+###  http://w3id.org/food/ontology/disciplinare-vino#Five_Roses
+disciplinare-vino:Five_Roses rdf:type owl:NamedIndividual ,
+                                      <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
+                             disciplinare-vino:abbinato disciplinare-vino:Pasta ,
+                                                        disciplinare-vino:Pesce ,
+                                                        disciplinare-vino:Risotto ;
+                             disciplinare-vino:haAnnata <http://dbpedia.org/page/2018> ;
+                             disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#12> ;
+                             disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#10-12_c°> ;
+                             disciplinare-vino:haTipologia disciplinare-vino:rosato ;
+                             disciplinare-vino:haVitigno disciplinare-vino:Negramaro ;
+                             disciplinare-vino:éProdotto disciplinare-vino:Puglia ;
+                             disciplinare-vino:éServito disciplinare-vino:Tulipano ;
+                             disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img924/5453/kv2K5g.png" ;
+                             disciplinare-vino:Produttore "Leone De Castris" .
+
+
 ###  http://w3id.org/food/ontology/disciplinare-vino#Flute
 disciplinare-vino:Flute rdf:type owl:NamedIndividual ,
-                                 disciplinare-vino:Calice .
+                                 disciplinare-vino:Calice ;
+                        disciplinare-vino:ImmagineCalice "https://imagizer.imageshack.com/img923/255/27aOkK.png" .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#Frutti_di_mare
-disciplinare-vino:Frutti_di_mare rdf:type owl:NamedIndividual ,
-                                          disciplinare-vino:cibo .
+###  http://w3id.org/food/ontology/disciplinare-vino#Formaggi
+disciplinare-vino:Formaggi rdf:type owl:NamedIndividual ,
+                                    disciplinare-vino:cibo ;
+                           disciplinare-vino:ImmagineCibo "https://imagizer.imageshack.com/img923/9562/XXSgzW.jpg" .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Gran_Ballon
 disciplinare-vino:Gran_Ballon rdf:type owl:NamedIndividual ,
-                                       disciplinare-vino:Calice .
+                                       disciplinare-vino:Calice ;
+                              disciplinare-vino:ImmagineCalice "https://imagizer.imageshack.com/img923/4126/5LYuLr.png" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Ice_Impérial
+disciplinare-vino:Ice_Impérial rdf:type owl:NamedIndividual ,
+                                        <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
+                               disciplinare-vino:abbinato disciplinare-vino:Aperitivo ;
+                               disciplinare-vino:haAnnata <http://dbpedia.org/page/2018> ;
+                               disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#12> ;
+                               disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#6-8_c°> ;
+                               disciplinare-vino:haTipologia <http://dbpedia.org/page/Champagne> ;
+                               disciplinare-vino:haVitigno <http://dbpedia.org/page/Chardonnay> ;
+                               disciplinare-vino:éProdotto disciplinare-vino:Epernay ;
+                               disciplinare-vino:éServito disciplinare-vino:Borgogna ;
+                               disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img923/433/anvNQb.png" ;
+                               disciplinare-vino:Produttore "Moet & Chandon" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Langhe
+disciplinare-vino:Langhe rdf:type owl:NamedIndividual ,
+                                  <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
+                         disciplinare-vino:abbinato disciplinare-vino:Aperitivo ,
+                                                    disciplinare-vino:Carne_rossa ,
+                                                    disciplinare-vino:Formaggi ,
+                                                    disciplinare-vino:Pasta ,
+                                                    disciplinare-vino:Pesce ,
+                                                    disciplinare-vino:Risotto ;
+                         disciplinare-vino:haAnnata <http://dbpedia.org/page/2018> ;
+                         disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#13> ;
+                         disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#10-12_c°> ;
+                         disciplinare-vino:haTipologia disciplinare-vino:bianco ;
+                         disciplinare-vino:haVitigno disciplinare-vino:Arneis ;
+                         disciplinare-vino:éProdotto disciplinare-vino:Piemonte ;
+                         disciplinare-vino:éServito disciplinare-vino:Renano ;
+                         disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img924/7968/rgwlrq.png" ;
+                         disciplinare-vino:Produttore "Ceretto" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Lombardia
+disciplinare-vino:Lombardia rdf:type owl:NamedIndividual ,
+                                     disciplinare-vino:Cantina .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Marche
+disciplinare-vino:Marche rdf:type owl:NamedIndividual ,
+                                  disciplinare-vino:Cantina .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Marina_Cvetic
+disciplinare-vino:Marina_Cvetic rdf:type owl:NamedIndividual ,
+                                         <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
+                                disciplinare-vino:abbinato disciplinare-vino:Carne_rossa ,
+                                                           disciplinare-vino:Formaggi ,
+                                                           disciplinare-vino:Pasta ,
+                                                           disciplinare-vino:Risotto ,
+                                                           disciplinare-vino:Salumi ;
+                                disciplinare-vino:haAnnata <http://dbpedia.org/page/2016> ;
+                                disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#14> ;
+                                disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#16-18_c°> ;
+                                disciplinare-vino:haTipologia disciplinare-vino:rosso ;
+                                disciplinare-vino:haVitigno disciplinare-vino:Montepulciano ;
+                                disciplinare-vino:éProdotto <http://dbpedia.org/page/Abruzzo> ;
+                                disciplinare-vino:éServito disciplinare-vino:Borgogna ;
+                                disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img922/1148/uon2DX.png" ;
+                                disciplinare-vino:Produttore "Mascarelli" .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Montefalco_Rosso
 disciplinare-vino:Montefalco_Rosso rdf:type owl:NamedIndividual ,
                                             <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
-                                   disciplinare-vino:abbinato <http://dbpedia.org/ontology/Cheese> ,
-                                                              <http://dbpedia.org/page/Beef> ,
-                                                              disciplinare-vino:Pasta ;
+                                   disciplinare-vino:abbinato disciplinare-vino:Carne_rossa ,
+                                                              disciplinare-vino:Formaggi ,
+                                                              disciplinare-vino:Pasta ,
+                                                              disciplinare-vino:Risotto ,
+                                                              disciplinare-vino:Salumi ;
                                    disciplinare-vino:haAnnata <http://dbpedia.org/page/2016> ;
-                                   disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#13_gradi> ;
+                                   disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#13> ;
                                    disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#16-18_c°> ;
                                    disciplinare-vino:haTipologia disciplinare-vino:rosso ;
                                    disciplinare-vino:haVitigno disciplinare-vino:Sangiovese ;
@@ -501,42 +614,157 @@ disciplinare-vino:Montepulciano rdf:type owl:NamedIndividual ,
                                          <http://aims.fao.org/aos/agrovoc/vitigno> .
 
 
+###  http://w3id.org/food/ontology/disciplinare-vino#Moscato
+disciplinare-vino:Moscato rdf:type owl:NamedIndividual ,
+                                   <http://aims.fao.org/aos/agrovoc/vitigno> .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Mumm
+disciplinare-vino:Mumm rdf:type owl:NamedIndividual ,
+                                <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
+                       disciplinare-vino:abbinato disciplinare-vino:Aperitivo ,
+                                                  disciplinare-vino:Pasta ,
+                                                  disciplinare-vino:Pesce ;
+                       disciplinare-vino:haAnnata <http://dbpedia.org/page/2018> ;
+                       disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#12,5> ;
+                       disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#6-8_c°> ;
+                       disciplinare-vino:haTipologia <http://dbpedia.org/page/Champagne> ;
+                       disciplinare-vino:haVitigno <http://dbpedia.org/page/Chardonnay> ;
+                       disciplinare-vino:éProdotto disciplinare-vino:Reims ;
+                       disciplinare-vino:éServito disciplinare-vino:Sautern ;
+                       disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img921/4093/KDhi4k.png" ;
+                       disciplinare-vino:Produttore "G.H. MUMM" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Negramaro
+disciplinare-vino:Negramaro rdf:type owl:NamedIndividual ,
+                                     <http://aims.fao.org/aos/agrovoc/vitigno> .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Oppidum
+disciplinare-vino:Oppidum rdf:type owl:NamedIndividual ,
+                                   <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
+                          disciplinare-vino:abbinato disciplinare-vino:Aperitivo ,
+                                                     disciplinare-vino:Pesce ;
+                          disciplinare-vino:haAnnata <http://dbpedia.org/page/2018> ;
+                          disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#13> ;
+                          disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#8-10_c°> ;
+                          disciplinare-vino:haTipologia disciplinare-vino:bianco ;
+                          disciplinare-vino:haVitigno disciplinare-vino:Moscato ;
+                          disciplinare-vino:éProdotto <http://dbpedia.org/page/Lazio> ;
+                          disciplinare-vino:éServito disciplinare-vino:Tulipano ;
+                          disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img921/4435/yzXqfm.png" ;
+                          disciplinare-vino:Produttore "Cantina Sant Andrea" .
+
+
 ###  http://w3id.org/food/ontology/disciplinare-vino#Pasta
 disciplinare-vino:Pasta rdf:type owl:NamedIndividual ,
-                                 disciplinare-vino:cibo .
+                                 disciplinare-vino:cibo ;
+                        disciplinare-vino:ImmagineCibo "https://imagizer.imageshack.com/img921/8759/upJDgq.jpg" .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Pesce
 disciplinare-vino:Pesce rdf:type owl:NamedIndividual ,
-                                 disciplinare-vino:cibo .
+                                 disciplinare-vino:cibo ;
+                        disciplinare-vino:ImmagineCibo "https://imagizer.imageshack.com/img921/9558/CUAULo.jpg" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Pettorosa
+disciplinare-vino:Pettorosa rdf:type owl:NamedIndividual ,
+                                     <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
+                            disciplinare-vino:abbinato disciplinare-vino:Aperitivo ,
+                                                       disciplinare-vino:Pasta ,
+                                                       disciplinare-vino:Pesce ,
+                                                       disciplinare-vino:Risotto ,
+                                                       disciplinare-vino:Salumi ;
+                            disciplinare-vino:haAnnata <http://dbpedia.org/page/2018> ;
+                            disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#12,5> ;
+                            disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#12-14_c°> ;
+                            disciplinare-vino:haTipologia disciplinare-vino:rosato ;
+                            disciplinare-vino:haVitigno disciplinare-vino:Negramaro ;
+                            disciplinare-vino:éProdotto disciplinare-vino:Puglia ;
+                            disciplinare-vino:éServito disciplinare-vino:Ballon ;
+                            disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img922/3849/irrV4A.png" ;
+                            disciplinare-vino:Produttore "Paolo Leo" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Pian_Delle_Mura
+disciplinare-vino:Pian_Delle_Mura rdf:type owl:NamedIndividual ,
+                                           <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
+                                  disciplinare-vino:abbinato disciplinare-vino:Dolce ;
+                                  disciplinare-vino:haAnnata <http://dbpedia.org/page/2018> ;
+                                  disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#12,5> ;
+                                  disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#12-14_c°> ;
+                                  disciplinare-vino:haTipologia disciplinare-vino:spumante ;
+                                  disciplinare-vino:haVitigno disciplinare-vino:Vernaccia ;
+                                  disciplinare-vino:éProdotto disciplinare-vino:Marche ;
+                                  disciplinare-vino:éServito disciplinare-vino:Sautern ;
+                                  disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img921/7139/Syq3R4.png" ;
+                                  disciplinare-vino:Produttore "Fabrini" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Piemonte
+disciplinare-vino:Piemonte rdf:type owl:NamedIndividual ,
+                                    disciplinare-vino:Cantina .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Pizza
+disciplinare-vino:Pizza rdf:type owl:NamedIndividual ,
+                                 disciplinare-vino:cibo ;
+                        disciplinare-vino:ImmagineCibo "https://imagizer.imageshack.com/img923/1706/7V5fO9.jpg" .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Poggio_Degli_Uberti
 disciplinare-vino:Poggio_Degli_Uberti rdf:type owl:NamedIndividual ,
                                                <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
-                                      disciplinare-vino:abbinato <http://dbpedia.org/ontology/Cheese> ,
-                                                                 <http://dbpedia.org/page/Beef> ,
-                                                                 <http://dbpedia.org/page/Salami> ,
-                                                                 disciplinare-vino:Pasta ;
-                                      disciplinare-vino:haAnnata <http://dbpedia.org/page/2017> ;
-                                      disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#13_gradi> ;
+                                      disciplinare-vino:abbinato disciplinare-vino:Carne_rossa ,
+                                                                 disciplinare-vino:Formaggi ,
+                                                                 disciplinare-vino:Pasta ,
+                                                                 disciplinare-vino:Risotto ,
+                                                                 disciplinare-vino:Salumi ;
+                                      disciplinare-vino:haAnnata <http://dbpedia.org/page/2016> ;
+                                      disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#13> ;
                                       disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#16-18_c°> ;
                                       disciplinare-vino:haTipologia disciplinare-vino:rosso ;
                                       disciplinare-vino:haVitigno disciplinare-vino:Sangiovese ;
-                                      disciplinare-vino:éProdotto <http://dbpedia.org/page/Tuscany> ;
+                                      disciplinare-vino:éProdotto disciplinare-vino:Toscana ;
                                       disciplinare-vino:éServito disciplinare-vino:Borgogna ;
                                       disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img921/9849/MCx4Sb.png" ;
                                       disciplinare-vino:Produttore "Silla" .
 
 
+###  http://w3id.org/food/ontology/disciplinare-vino#Pollo
+disciplinare-vino:Pollo rdf:type owl:NamedIndividual ,
+                                 disciplinare-vino:cibo ;
+                        disciplinare-vino:ImmagineCibo "https://imagizer.imageshack.com/img924/9578/ZQjjTg.jpg" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Puglia
+disciplinare-vino:Puglia rdf:type owl:NamedIndividual ,
+                                  disciplinare-vino:Cantina .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Reims
+disciplinare-vino:Reims rdf:type owl:NamedIndividual ,
+                                 disciplinare-vino:Cantina .
+
+
 ###  http://w3id.org/food/ontology/disciplinare-vino#Renano
 disciplinare-vino:Renano rdf:type owl:NamedIndividual ,
-                                  disciplinare-vino:Calice .
+                                  disciplinare-vino:Calice ;
+                         disciplinare-vino:ImmagineCalice "https://imagizer.imageshack.com/img921/5579/TmcAfe.png" .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Risotto
 disciplinare-vino:Risotto rdf:type owl:NamedIndividual ,
-                                   disciplinare-vino:cibo .
+                                   disciplinare-vino:cibo ;
+                          disciplinare-vino:ImmagineCibo "https://imagizer.imageshack.com/img922/8912/5Sckbs.jpg" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Salumi
+disciplinare-vino:Salumi rdf:type owl:NamedIndividual ,
+                                  disciplinare-vino:cibo ;
+                         disciplinare-vino:ImmagineCibo "https://imagizer.imageshack.com/img921/1192/W5zBUM.jpg" .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Sangiovese
@@ -546,7 +774,45 @@ disciplinare-vino:Sangiovese rdf:type owl:NamedIndividual ,
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Sautern
 disciplinare-vino:Sautern rdf:type owl:NamedIndividual ,
-                                   disciplinare-vino:Calice .
+                                   disciplinare-vino:Calice ;
+                          disciplinare-vino:ImmagineCalice "https://imagizer.imageshack.com/img921/5176/Dm5MKS.png" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Sicilia
+disciplinare-vino:Sicilia rdf:type owl:NamedIndividual ,
+                                   disciplinare-vino:Cantina .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Syrah
+disciplinare-vino:Syrah rdf:type owl:NamedIndividual ,
+                                 <http://aims.fao.org/aos/agrovoc/vitigno> .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Tellus_Rosè
+disciplinare-vino:Tellus_Rosè rdf:type owl:NamedIndividual ,
+                                       <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
+                              disciplinare-vino:abbinato disciplinare-vino:Aperitivo ,
+                                                         disciplinare-vino:Pesce ,
+                                                         disciplinare-vino:Salumi ;
+                              disciplinare-vino:haAnnata <http://dbpedia.org/page/2018> ;
+                              disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#12,5> ;
+                              disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#8-12_c°> ;
+                              disciplinare-vino:haTipologia disciplinare-vino:rosato ;
+                              disciplinare-vino:haVitigno disciplinare-vino:Syrah ;
+                              disciplinare-vino:éProdotto <http://dbpedia.org/page/Lazio> ;
+                              disciplinare-vino:éServito disciplinare-vino:Tulipano ;
+                              disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img922/7938/lHyQgZ.png" ;
+                              disciplinare-vino:Produttore "Falesco" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Toscana
+disciplinare-vino:Toscana rdf:type owl:NamedIndividual ,
+                                   disciplinare-vino:Cantina .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Trentino_Alto_Adige
+disciplinare-vino:Trentino_Alto_Adige rdf:type owl:NamedIndividual ,
+                                               disciplinare-vino:Cantina .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Tufo
@@ -556,47 +822,53 @@ disciplinare-vino:Tufo rdf:type owl:NamedIndividual ,
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Tulipano
 disciplinare-vino:Tulipano rdf:type owl:NamedIndividual ,
-                                    disciplinare-vino:Calice .
+                                    disciplinare-vino:Calice ;
+                           disciplinare-vino:ImmagineCalice "https://imagizer.imageshack.com/img921/2568/kpvzrf.png" .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#Tulipano_Piccolo
 disciplinare-vino:Tulipano_Piccolo rdf:type owl:NamedIndividual ,
-                                            disciplinare-vino:Calice .
+                                            disciplinare-vino:Calice ;
+                                   disciplinare-vino:ImmagineCalice "https://imagizer.imageshack.com/img923/4890/h8sAmy.png" .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#ViniDeStefano
-disciplinare-vino:ViniDeStefano rdf:type owl:NamedIndividual ,
-                                         <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
-                                disciplinare-vino:abbinato <http://dbpedia.org/ontology/Cheese> ,
-                                                           disciplinare-vino:Frutti_di_mare ,
-                                                           disciplinare-vino:Pesce ,
-                                                           disciplinare-vino:Risotto ;
-                                disciplinare-vino:haAnnata <http://dbpedia.org/page/2014> ;
-                                disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#14_gradi> ;
-                                disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#18-20_c°> ;
-                                disciplinare-vino:haTipologia disciplinare-vino:bianco ;
-                                disciplinare-vino:haVitigno disciplinare-vino:Tufo ;
-                                disciplinare-vino:éProdotto <http://dbpedia.org/page/Campania> ;
-                                disciplinare-vino:éServito disciplinare-vino:Ballon ;
-                                disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img923/3083/OCZwDc.jpg" ;
-                                disciplinare-vino:Produttore "ViniDeStefano" ;
-                                rdfs:label "ViniDeStefanoBianco" .
+###  http://w3id.org/food/ontology/disciplinare-vino#Vernaccia
+disciplinare-vino:Vernaccia rdf:type owl:NamedIndividual ,
+                                     <http://aims.fao.org/aos/agrovoc/vitigno> .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#ViniDeStefanoRosso
-disciplinare-vino:ViniDeStefanoRosso rdf:type owl:NamedIndividual ,
-                                              <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
-                                     disciplinare-vino:abbinato <http://dbpedia.org/page/Beef> ,
-                                                                <http://dbpedia.org/page/Chicken> ;
-                                     disciplinare-vino:haAnnata <http://dbpedia.org/page/2016> ;
-                                     disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#14_gradi> ;
-                                     disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#16-18_c°> ;
-                                     disciplinare-vino:haTipologia disciplinare-vino:rosso ;
-                                     disciplinare-vino:haVitigno disciplinare-vino:Campi_Taurasini ;
-                                     disciplinare-vino:éProdotto <http://dbpedia.org/page/Campania> ;
-                                     disciplinare-vino:éServito disciplinare-vino:Ballon ;
-                                     disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img922/1450/ipIgwR.jpg" ;
-                                     disciplinare-vino:Produttore "ViniDeStefano" .
+###  http://w3id.org/food/ontology/disciplinare-vino#Vini_De_Stefano_Bianco
+disciplinare-vino:Vini_De_Stefano_Bianco rdf:type owl:NamedIndividual ,
+                                                  <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
+                                         disciplinare-vino:abbinato disciplinare-vino:Formaggi ,
+                                                                    disciplinare-vino:Pesce ,
+                                                                    disciplinare-vino:Risotto ;
+                                         disciplinare-vino:haAnnata <http://dbpedia.org/page/2014> ;
+                                         disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#14> ;
+                                         disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#8-10_c°> ;
+                                         disciplinare-vino:haTipologia disciplinare-vino:bianco ;
+                                         disciplinare-vino:haVitigno disciplinare-vino:Tufo ;
+                                         disciplinare-vino:éProdotto <http://dbpedia.org/page/Campania> ;
+                                         disciplinare-vino:éServito disciplinare-vino:Tulipano ;
+                                         disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img924/1214/0DI88N.png" ;
+                                         disciplinare-vino:Produttore "Vini De Stefano" .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#Vini_De_Stefano_Rosso
+disciplinare-vino:Vini_De_Stefano_Rosso rdf:type owl:NamedIndividual ,
+                                                 <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> ;
+                                        disciplinare-vino:abbinato disciplinare-vino:Arrosto ,
+                                                                   disciplinare-vino:Cacciagione ,
+                                                                   disciplinare-vino:Pollo ;
+                                        disciplinare-vino:haAnnata <http://dbpedia.org/page/2016> ;
+                                        disciplinare-vino:haGradazione <http://w3id.org/food/ontology/disciplinare-vino#14> ;
+                                        disciplinare-vino:haTemperatura <http://w3id.org/food/ontology/disciplinare-vino#16-18_c°> ;
+                                        disciplinare-vino:haTipologia disciplinare-vino:rosso ;
+                                        disciplinare-vino:haVitigno disciplinare-vino:Campi_Taurasini ;
+                                        disciplinare-vino:éProdotto <http://dbpedia.org/page/Campania> ;
+                                        disciplinare-vino:éServito disciplinare-vino:Bordeaux_Rosso ;
+                                        disciplinare-vino:ImmagineVino "https://imagizer.imageshack.com/img921/2638/CaQWF4.png" ;
+                                        disciplinare-vino:Produttore "Vini De Stefano" .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#bianco
@@ -605,8 +877,12 @@ disciplinare-vino:bianco rdf:type owl:NamedIndividual ,
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#questo_vino_è_buono
-disciplinare-vino:questo_vino_è_buono rdf:type owl:NamedIndividual ,
-                                               <http://w3id.org/food/ontology/disciplinare-upper/DescrizioneMateriaPrima> .
+disciplinare-vino:questo_vino_è_buono rdf:type owl:NamedIndividual .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#rosato
+disciplinare-vino:rosato rdf:type owl:NamedIndividual ,
+                                  <http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino> .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#rosso
@@ -614,49 +890,54 @@ disciplinare-vino:rosso rdf:type owl:NamedIndividual ,
                                  <http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino> .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#rosè
-disciplinare-vino:rosè rdf:type owl:NamedIndividual ,
-                                <http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino> .
-
-
 ###  http://w3id.org/food/ontology/disciplinare-vino#spumante
 disciplinare-vino:spumante rdf:type owl:NamedIndividual ,
                                     <http://w3id.org/food/ontology/disciplinare-vino/tipologiaVino> .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#10_gradi
-<http://w3id.org/food/ontology/disciplinare-vino#10_gradi> rdf:type owl:NamedIndividual ,
-                                                                    disciplinare-vino:gradazione .
+###  http://w3id.org/food/ontology/disciplinare-vino#10
+<http://w3id.org/food/ontology/disciplinare-vino#10> rdf:type owl:NamedIndividual ,
+                                                              disciplinare-vino:gradazione .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#11_gradi
-<http://w3id.org/food/ontology/disciplinare-vino#11_gradi> rdf:type owl:NamedIndividual ,
-                                                                    disciplinare-vino:gradazione .
+###  http://w3id.org/food/ontology/disciplinare-vino#10-12_c°
+<http://w3id.org/food/ontology/disciplinare-vino#10-12_c°> rdf:type owl:NamedIndividual ,
+                                                                    disciplinare-vino:temperatura .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#12_gradi
-<http://w3id.org/food/ontology/disciplinare-vino#12_gradi> rdf:type owl:NamedIndividual ,
-                                                                    disciplinare-vino:gradazione .
+###  http://w3id.org/food/ontology/disciplinare-vino#11
+<http://w3id.org/food/ontology/disciplinare-vino#11> rdf:type owl:NamedIndividual ,
+                                                              disciplinare-vino:gradazione .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#12,5_gradi
-<http://w3id.org/food/ontology/disciplinare-vino#12,5_gradi> rdf:type owl:NamedIndividual ,
-                                                                      disciplinare-vino:gradazione .
+###  http://w3id.org/food/ontology/disciplinare-vino#12
+<http://w3id.org/food/ontology/disciplinare-vino#12> rdf:type owl:NamedIndividual ,
+                                                              disciplinare-vino:gradazione .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#13_gradi
-<http://w3id.org/food/ontology/disciplinare-vino#13_gradi> rdf:type owl:NamedIndividual ,
-                                                                    disciplinare-vino:gradazione .
+###  http://w3id.org/food/ontology/disciplinare-vino#12,5
+<http://w3id.org/food/ontology/disciplinare-vino#12,5> rdf:type owl:NamedIndividual ,
+                                                                disciplinare-vino:gradazione .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#13,5_gradi
-<http://w3id.org/food/ontology/disciplinare-vino#13,5_gradi> rdf:type owl:NamedIndividual ,
-                                                                      disciplinare-vino:gradazione .
+###  http://w3id.org/food/ontology/disciplinare-vino#12-14_c°
+<http://w3id.org/food/ontology/disciplinare-vino#12-14_c°> rdf:type owl:NamedIndividual ,
+                                                                    disciplinare-vino:temperatura .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#14_gradi
-<http://w3id.org/food/ontology/disciplinare-vino#14_gradi> rdf:type owl:NamedIndividual ,
-                                                                    disciplinare-vino:gradazione .
+###  http://w3id.org/food/ontology/disciplinare-vino#13
+<http://w3id.org/food/ontology/disciplinare-vino#13> rdf:type owl:NamedIndividual ,
+                                                              disciplinare-vino:gradazione .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#13,5
+<http://w3id.org/food/ontology/disciplinare-vino#13,5> rdf:type owl:NamedIndividual ,
+                                                                disciplinare-vino:gradazione .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#14
+<http://w3id.org/food/ontology/disciplinare-vino#14> rdf:type owl:NamedIndividual ,
+                                                              disciplinare-vino:gradazione .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#16-18_c°
@@ -664,9 +945,9 @@ disciplinare-vino:spumante rdf:type owl:NamedIndividual ,
                                                                     disciplinare-vino:temperatura .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#17_gradi
-<http://w3id.org/food/ontology/disciplinare-vino#17_gradi> rdf:type owl:NamedIndividual ,
-                                                                    disciplinare-vino:gradazione .
+###  http://w3id.org/food/ontology/disciplinare-vino#17
+<http://w3id.org/food/ontology/disciplinare-vino#17> rdf:type owl:NamedIndividual ,
+                                                              disciplinare-vino:gradazione .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#18-20_c°
@@ -674,18 +955,28 @@ disciplinare-vino:spumante rdf:type owl:NamedIndividual ,
                                                                     disciplinare-vino:temperatura .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#20_gradi
-<http://w3id.org/food/ontology/disciplinare-vino#20_gradi> rdf:type owl:NamedIndividual ,
-                                                                    disciplinare-vino:gradazione .
+###  http://w3id.org/food/ontology/disciplinare-vino#20
+<http://w3id.org/food/ontology/disciplinare-vino#20> rdf:type owl:NamedIndividual ,
+                                                              disciplinare-vino:gradazione .
 
 
-###  http://w3id.org/food/ontology/disciplinare-vino#8_gradi
-<http://w3id.org/food/ontology/disciplinare-vino#8_gradi> rdf:type owl:NamedIndividual ,
-                                                                   disciplinare-vino:gradazione .
+###  http://w3id.org/food/ontology/disciplinare-vino#6-8_c°
+<http://w3id.org/food/ontology/disciplinare-vino#6-8_c°> rdf:type owl:NamedIndividual ,
+                                                                  disciplinare-vino:temperatura .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#8
+<http://w3id.org/food/ontology/disciplinare-vino#8> rdf:type owl:NamedIndividual ,
+                                                             disciplinare-vino:gradazione .
 
 
 ###  http://w3id.org/food/ontology/disciplinare-vino#8-10_c°
 <http://w3id.org/food/ontology/disciplinare-vino#8-10_c°> rdf:type owl:NamedIndividual ,
+                                                                   disciplinare-vino:temperatura .
+
+
+###  http://w3id.org/food/ontology/disciplinare-vino#8-12_c°
+<http://w3id.org/food/ontology/disciplinare-vino#8-12_c°> rdf:type owl:NamedIndividual ,
                                                                    disciplinare-vino:temperatura .
 
 
@@ -697,10 +988,6 @@ disciplinare-vino:spumante rdf:type owl:NamedIndividual ,
                                                        "Descrive una particolare tipologia di materia prima che si riferisce ai possibili vitigni (ad esempio, Montepulciano, Malvasia, Moscato) usati per la produzione di un certo vino."@it ;
                                           rdfs:label "Vitigno"@it ,
                                                      "Vitis vinifera"@en .
-
-
-<http://w3id.org/food/ontology/disciplinare-upper/DescrizioneMateriaPrima> rdfs:label "DescrizioneMateriaPrima"@it ,
-                                                                                      "Description raw matarial"@it .
 
 
 disciplinare-vino:Calice rdfs:comment "Il tipo di calice con cui va servito il vino"@it ;
@@ -726,9 +1013,9 @@ disciplinare-vino:gradazione rdfs:comment "Indicates the level of alcohol presen
 
 
 disciplinare-vino:temperatura rdfs:comment "indicates which is ideal temperature of service of wine"@en ;
-                              rdfs:label "temperature"@en ;
-                              rdfs:comment "Indica la temperatura ideale per servire il vino"@it ;
-                              rdfs:label "Temperatura"@it .
+                              rdfs:label "temperature"@en ,
+                                         "Temperatura"@it ;
+                              rdfs:comment "Indica la temperatura ideale per servire il vino"@it .
 
 
 <http://w3id.org/food/ontology/disciplinare-vino/denominazioneVino> rdfs:label "wine protected name"@en ;
