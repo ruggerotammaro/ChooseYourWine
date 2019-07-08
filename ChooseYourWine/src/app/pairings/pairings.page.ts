@@ -16,7 +16,8 @@ export class PairingsPage {
 
     this.vino=this.route.snapshot.paramMap.get("id");
     this.v=this.splittingString(this.vino);
-    let query = 'select+%3Fnome+%3Fimmagine%0D%0Awhere+%7B%0D%0A%3Fx+vino%3AhaDenominazione+%3Fy%0D%0AFILTER+regex%28%3Fy%2C+%22'+this.vino+'%22%29.%0D%0A%3Fy+vino%3Aabbinato+%3Fnome.%0D%0A%3Fy+vino%3AImmagineVino+%3Fimmagine.';
+    console.log(this.v);
+    let query = 'select+%3Fnome+%3Fimmagine%0D%0Awhere+%7B%0D%0A%3Fx+vino%3AhaDenominazione+%3Fy%0D%0AFILTER+regex%28%3Fy%2C+%22'+this.vino+'%22%29.%0D%0A%3Fy+vino%3Aabbinato+%3Fnome.%0D%0A%3Fnome+vino%3AImmagineCibo+%3Fimmagine.';
     this.query(query);
   }
   private sparkqlData = null;
@@ -25,7 +26,7 @@ export class PairingsPage {
   
   
   query(query){
-    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2FwineIMG&query=PREFIX+vino%3A+%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E+%0D%0A'+query+'%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
+    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2FwineMR&query=PREFIX+vino%3A+%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E+%0D%0A'+query+'%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
     res => res.json())).subscribe( data => {this.jsonObject = data;
       this.sparkqlData=JSON.stringify(this.jsonObject);
       this.getAllWine(this.sparkqlData);      
@@ -38,7 +39,7 @@ export class PairingsPage {
     let element = x[x.length-1];
     if(!element.includes("#")){
       if(element.includes("_")){
-        var newElement = element.replace("_"," ");
+        var newElement = element.replace(/_/g," ");
         return newElement;
       }
       return element;
