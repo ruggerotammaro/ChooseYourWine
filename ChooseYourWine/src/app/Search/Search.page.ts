@@ -55,7 +55,6 @@ export class SearchPage {
     }
   }
 
-
   showWine(vino){
     this.pas=this.convert(vino);
     
@@ -67,7 +66,6 @@ export class SearchPage {
     var x= vino.replace(/ /g,"_");
     return x;
   }
-
 
   search(tipologia){
     this.vini=[];

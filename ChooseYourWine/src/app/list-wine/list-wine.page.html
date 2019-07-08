@@ -4,23 +4,45 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content text-center>
     <ion-card class="welcome-card">
       <ion-img src="/assets/images/wine.jpg" style="width:'350'; height:'140'"></ion-img>
       <ion-card-header>
         <ion-card-title>Benvenuto in ChooseYourWine </ion-card-title>
       </ion-card-header>
     </ion-card>
-    <h1>vini abbinati a {{c}}</h1>
-            <div class="grid-full">
-              <ion-row>
-                <ion-col *ngFor='let vino of vini'>
-                  <ion-card >
+    <h1>Vini abbinati a {{c}}</h1>
+
+    <ion-row>
+        <ion-col>
+            <table>
+              <tr *ngFor='let vino of vini'>
+                <td>
+                  <!-- Immagine vino  -->
+                  <ion-label class="nameWine"> {{vino.denominazione}} </ion-label>
+                </td>
+                <td>
+                   <!-- Nome vino  --> 
+                   <ion-img class="imageWine" src={{vino.immagine}}></ion-img>
+                </td>
+                <td>
+                   <!-- Dettagli vino --> 
+                   <ion-button class="button" (click)=showWine(vino.denominazione)>Dettagli</ion-button>   
+                </td>
+              </tr>
+            </table>
+        </ion-col>
+    </ion-row>
+      <!--<div class="grid-full">
+        <ion-row>
+          <ion-col *ngFor='let vino of vini'>
+            <ion-card >
                       <ion-img class="imageWine"  src={{vino.immagine}}></ion-img>
                     <ion-card-title>{{vino.denominazione}}</ion-card-title>
                   </ion-card>
                 </ion-col> 
               </ion-row>
-            </div>
+            </div>-->
+      
   </ion-content>
   

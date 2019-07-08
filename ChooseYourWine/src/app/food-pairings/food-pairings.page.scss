@@ -1,14 +1,42 @@
 .welcome-card ion-img {
     max-height: 35vh;
     overflow: hidden;
-  }
+}
 
-  .imageChalice{
+table {
+    width:20%;
+    height: 20%;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+h1{
+    margin-top: 5%;
+    margin-bottom: 30px;
+}
+
+.imageChalice{
     height: 100px;
     width: 100px;
     margin: auto;
 }
 
+.imageFood{
+    height: 64px;
+    width: 64px;
+    padding: 10px;
+}
+
+.button{
+    color: black;
+    --background: #d8d8d8;	
+    --border-color: #d8d8d8;
+    --background-activated: #d8d8d8;
+    --background-hover: #ececec; 
+    --border-radius:10px;
+}
   .grid-full ion-col {
       flex: 0 0 50%;
       max-width: 50%;

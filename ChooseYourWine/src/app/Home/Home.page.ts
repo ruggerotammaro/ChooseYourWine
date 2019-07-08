@@ -29,7 +29,7 @@ export class HomePage {
   public getAllWines(){
     this.vini=[];
     let query = 'SELECT+%3FNomiVini+%0D%0AWHERE+%7B+%3Fx+vino%3AhaDenominazione+%3FNomiVini.';
-   this.query(query);
+    this.query(query);
    
 
     };

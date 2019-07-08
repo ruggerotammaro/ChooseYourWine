@@ -20,6 +20,7 @@ export class ListWinePage {
 }
 cibo:any;
 c:any;
+pas:any;
 private sparkqlData = null;
 public jsonObject: any;
 vini:Array<{denominazione:any,immagine:any}>=[];
@@ -63,6 +64,17 @@ public getAllWine(allWine) {
       immagine: obj.results.bindings[i].immagine.value
       });
   }
+}
+
+convert(vino){
+  var x= vino.replace(/ /g,"_");
+  return x;
+}
+showWine(vino){
+  this.pas=this.convert(vino);
+  
+  console.log(this.pas);
+  this.router.navigate(['/tabs/wine-details',{id:this.pas}])
 }
 
 }
