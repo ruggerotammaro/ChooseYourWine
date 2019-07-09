@@ -4,19 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content text-center>
     <ion-card class="welcome-card">
         <ion-img src="/assets/images/wine.jpg" class="imageWine"></ion-img>
         <ion-card-header>
           <ion-card-title>Benvenuto in ChooseYourWine </ion-card-title>
         </ion-card-header>
       </ion-card>
-<h1>Cibi abbinati a {{v}}</h1>
+<h1>Cibi abbinati a {{v}}</h1> 
+
 <div class="grid-full">
   <ion-row>
     <ion-col *ngFor='let cibo of cibi'>
       <ion-card >
-        <ion-img class="imageWine"  src={{cibo.immagine}}></ion-img>
+        <ion-img class="imageFood"  src={{cibo.immagine}}></ion-img>
         <div class="card-title">{{cibo.nome}}</div>
       </ion-card>
     </ion-col> 

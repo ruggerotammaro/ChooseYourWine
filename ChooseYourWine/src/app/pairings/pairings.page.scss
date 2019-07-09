@@ -8,16 +8,17 @@ h1{
     margin-bottom: 30px;
 }
 
-.imageWine{
-    height: auto;
-    width: auto;
+.imageFood{
+    height: 300px;
+    width: 300px;
     margin: auto;
-    margin-bottom: 3px;
 }
 
 .grid-full ion-col {
+    margin: auto;
     flex: 0 0 50%;
-    max-width: 50%;
+    max-width: 25%;
+    max-height: 25%;
     padding: 5px 0;
 }
 
@@ -28,10 +29,10 @@ h1{
     width: 100%;
     display: block;
     font-weight: bold;
-    color:gray;
+    color:#cdc2c0;
   }
 
-  .show-card ion-img {
+ .show-card ion-img {
     max-height: 50vh;
     max-width: 50vh;
     overflow: hidden;
