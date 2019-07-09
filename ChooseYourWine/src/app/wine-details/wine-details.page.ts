@@ -10,34 +10,15 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class WineDetailsPage {
 
-  vini:Array<{denominazione:string,immagine:any,luogo:string,produttore:string,tipologia:string,annata:string,vitigno:string,gradazione:string,temperaturaServizio:string,calice:string}>=[];
+  vini:Array<{denominazione:string,immagine:any,luogo:string,produttore:string,tipologia:string,annata:string,vitigno:string,gradazione:string,temperaturaServizio:string,calice:string,immagineCalice:string}>=[];
   vino:any;
   sparkqlData:any;
   jsonObject:any;
-  denominazione:any;
-  immagine:any;
-  luogo:any;
-  produttore:any;
-  tipologia:any;
-  annata:any;
-  vitigno:any;
-  gradazione:any;
-  temperaturaServizio:any;
-  calice:Array<{calice:string,immagineCalice:string}>;
   pas:any;
   constructor(private http: Http,private router: Router,private route:ActivatedRoute) {
 
   this.vino=this.route.snapshot.paramMap.get("id");
-  this.denominazione=[];
-  this.immagine=[];
-  this.luogo=[];
-  this.produttore=[];
-  this.tipologia=[];
-  this.annata=[];
-  this.vitigno=[];
-  this.gradazione=[];
-  this.temperaturaServizio=[];
-  this.calice=[];
+  this.vini=[];
   let query='SELECT+%3Fdenominazione%2C%3Fimmagine%2C+%3Fluogo%2C+%3Fproduttore%2C+%3Ftipologia%2C+%3Fannata%2C+%3Fvitigno%2C+%3Fgradazione%2C+%3Fcalice%2C+%3FimmagineCalice%2C+%3FtemperaturaServizio%0D%0A+WHERE+%7B+%0D%0A++%3Fx+vino%3AhaDenominazione+%3Fdenominazione.%0D%0A++FILTER+regex%28%3Fdenominazione%2C+%22'+this.vino+'%22%29.%0D%0A+%3Fdenominazione+vino%3AImmagineVino+%3Fimmagine.%0D%0A+%3Fdenominazione+vino%3A%C3%A9Prodotto+%3Fluogo.+%0D%0A+%3Fdenominazione+vino%3AProduttore+%3Fproduttore.%0D%0A+%3Fdenominazione+vino%3AhaTipologia+%3Ftipologia.%0D%0A+%3Fdenominazione+vino%3AhaAnnata+%3Fannata.%0D%0A+%3Fdenominazione+vino%3AhaVitigno+%3Fvitigno.%0D%0A+%3Fdenominazione+vino%3AhaGradazione+%3Fgradazione.%0D%0A+%3Fdenominazione+vino%3A%C3%A9Servito+%3Fcalice.%0D%0A+%3Fcalice+vino%3AImmagineCalice+%3FimmagineCalice.%0D%0A+%3Fdenominazione+vino%3AhaTemperatura+%3FtemperaturaServizio.';
   this.query(query);
   }
@@ -54,20 +35,18 @@ export class WineDetailsPage {
 
   public getDetailsWine(wine) {
     var obj = JSON.parse(wine);
-    //console.log("senza funzione "+obj.results.bindings[0].calice.value);
-    //console.log("con funzione "+this.splittingString(obj.results.bindings[0].calice.value));
-    this.denominazione.push(this.splittingString(obj.results.bindings[0].denominazione.value));
-    this.immagine.push(obj.results.bindings[0].immagine.value);
-    this.luogo.push(this.splittingString(obj.results.bindings[0].luogo.value));
-    this.produttore.push(obj.results.bindings[0].produttore.value);
-    this.tipologia.push(this.splittingString(obj.results.bindings[0].tipologia.value));
-    this.annata.push(this.splittingString(obj.results.bindings[0].annata.value));
-    this.vitigno.push(this.splittingString(obj.results.bindings[0].vitigno.value));
-    this.gradazione.push(this.splittingString(obj.results.bindings[0].gradazione.value));
-    this.temperaturaServizio.push(this.splittingString(obj.results.bindings[0].temperaturaServizio.value));
-    this.calice.push({
-      calice:this.splittingString(obj.results.bindings[0].calice.value),
-      immagineCalice:obj.results.bindings[0].immagineCalice.value});
+    this.vini.push({
+    denominazione:this.splittingString(obj.results.bindings[0].denominazione.value),
+    immagine:obj.results.bindings[0].immagine.value,
+    luogo:this.splittingString(obj.results.bindings[0].luogo.value),
+    produttore:this.splittingString(obj.results.bindings[0].produttore.value),
+    tipologia:this.splittingString(obj.results.bindings[0].tipologia.value),
+    annata:this.splittingString(obj.results.bindings[0].annata.value),
+    vitigno:this.splittingString(obj.results.bindings[0].vitigno.value),
+    gradazione:this.splittingString(obj.results.bindings[0].gradazione.value),
+    temperaturaServizio:this.splittingString(obj.results.bindings[0].temperaturaServizio.value),
+    calice:this.splittingString(obj.results.bindings[0].calice.value),
+    immagineCalice:obj.results.bindings[0].immagineCalice.value});
     }
 
     public splittingString(string){

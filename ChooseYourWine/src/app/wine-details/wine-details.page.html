@@ -14,53 +14,53 @@
         </ion-card-header>
       </ion-card>
     <ion-item>
-        <ion-label  class="nameWine" *ngFor='let denom of denominazione'> {{denom}} </ion-label> 
+        <ion-label  class="nameWine" *ngFor='let vino of vini'> {{vino.denominazione}} </ion-label> 
     </ion-item>
-  <ion-row>
+  <ion-row >
     <ion-col col-auto>
       <table>
-        <tr>
+        <tr *ngFor='let vino of vini'>
           <td>
               <ion-item lines="none">
-                  <ion-img class="imageWine" *ngFor='let im of immagine' src={{im}}></ion-img>
+                  <ion-img class="imageWine" src={{vino.immagine}}></ion-img>
               </ion-item>
               <ion-item lines="none">
                 
-                <ion-img class="imageChalice" *ngFor='let c of calice' src={{c.immagineCalice}}></ion-img>
+                <ion-img class="imageChalice"  src={{vino.immagineCalice}}></ion-img>
               </ion-item>  
           </td>
           <td>
               <ion-item>
                   <ion-label> Luogo: </ion-label>
-                  <ion-label *ngFor='let l of luogo'> {{l}} </ion-label>
+                  <ion-label> {{vino.luogo}} </ion-label>
               </ion-item>
               <ion-item>
                   <ion-label> Produttore: </ion-label>
-                  <ion-label *ngFor='let prod of produttore'> {{prod}} </ion-label> 
+                  <ion-label> {{vino.produttore}} </ion-label> 
               </ion-item>
               <ion-item>
                   <ion-label> Tipologia: </ion-label>
-                  <ion-label *ngFor='let tip of tipologia'> {{tip}} </ion-label> 
+                  <ion-label> {{vino.tipologia}} </ion-label> 
               </ion-item>
               <ion-item>
                   <ion-label> Annata: </ion-label>
-                  <ion-label *ngFor='let ann of annata'> {{ann}} </ion-label>
+                  <ion-label> {{vino.annata}} </ion-label>
               </ion-item>
               <ion-item>
                   <ion-label> Vitigno: </ion-label>
-                  <ion-label *ngFor='let vit of vitigno'> {{vit}} </ion-label>
+                  <ion-label> {{vino.vitigno}} </ion-label>
               </ion-item>
               <ion-item>
                   <ion-label> Gradazione: </ion-label>
-                  <ion-label *ngFor='let grad of gradazione'> {{grad}}% </ion-label> 
+                  <ion-label> {{vino.gradazione}}% </ion-label> 
               </ion-item>
               <ion-item>
                   <ion-label> Temperatura <br>di servizio: </ion-label>
-                  <ion-label *ngFor='let temp of temperaturaServizio'> {{temp}} </ion-label> 
+                  <ion-label> {{vino.temperaturaServizio}} </ion-label> 
               </ion-item>
               <ion-item>
                   <ion-label> Calice: </ion-label>
-                  <ion-label *ngFor='let c of calice'>{{c.calice}}</ion-label>
+                  <ion-label>{{vino.calice}}</ion-label>
               </ion-item>
           </td>
         </tr>
@@ -69,7 +69,7 @@
   </ion-row>
 
   <div text-center>
-      <ion-button *ngFor='let denom of denominazione' (click)=showPairings(denom)> Abbinamenti </ion-button>
+      <ion-button *ngFor='let vino of vini' (click)=showPairings(vino.denominazione)> Abbinamenti </ion-button>
   </div>
 
 </ion-content>

@@ -8,15 +8,23 @@
 
 <ion-content text-center>
     <ion-card class="welcome-card">
-      <ion-img src="../assets/images/wine.jpg" style="width:'350'; height:'140'"></ion-img>
+      <ion-img src="../../assets/images/wine.jpg" style="width:'350'; height:'140'"></ion-img>
       <ion-card-header>
         <ion-card-title>Benvenuto in ChooseYourWine </ion-card-title>
       </ion-card-header>
     </ion-card>
 
     <ion-label> <h1> Consigliati </h1></ion-label> 
-        <div class="center" *ngFor='let vino of vini' lines="none" >
-         <ion-button class="button" (click)=showWine(vino)>{{vino}}</ion-button>   
+    
+
+        <div class="grid-full">
+          <ion-row>
+            <ion-col *ngFor='let vino of vini'>
+              <ion-card (click)=showWine(vino) >
+                  <ion-img src="../../assets/images/wines/{{vino}}.jpg" class="imageWine"></ion-img>
+                  <div class="card-title">{{vino}}</div>
+              </ion-card>
+            </ion-col> 
+          </ion-row>
         </div>
-        
 </ion-content>

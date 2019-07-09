@@ -6,7 +6,7 @@
 
 <ion-content>
     <ion-card class="welcome-card">
-        <ion-img src="/assets/images/wine.jpg" style="width:'350'; height:'140'"></ion-img>
+        <ion-img src="/assets/images/wine.jpg" class="imageWine"></ion-img>
         <ion-card-header>
           <ion-card-title>Benvenuto in ChooseYourWine </ion-card-title>
         </ion-card-header>
@@ -16,8 +16,8 @@
   <ion-row>
     <ion-col *ngFor='let cibo of cibi'>
       <ion-card >
-          <ion-img class="imageWine"  src={{cibo.immagine}}></ion-img>
-        <ion-card-title>{{cibo.nome}}</ion-card-title>
+        <ion-img class="imageWine"  src={{cibo.immagine}}></ion-img>
+        <div class="card-title">{{cibo.nome}}</div>
       </ion-card>
     </ion-col> 
   </ion-row>
