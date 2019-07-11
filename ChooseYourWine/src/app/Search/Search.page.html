@@ -8,32 +8,41 @@
 
 <ion-content text-center>
     <ion-card class="welcome-card">
-        <ion-img src="/assets/images/wine.jpg" style="width:'350'; height:'140'"></ion-img>
+        <ion-img src="../../assets/images/wine.jpg" style="width:'350'; height:'140'"></ion-img>
             <ion-card-header>
                 <ion-card-title> Benvenuto in ChooseYourWine </ion-card-title>
             </ion-card-header>
     </ion-card>
 
-    <h1> Inserisci la tipologia di vino </h1>
-                    <form  #form="ngForm" (ngSubmit)="search(form)" method="post">
-                        <ion-item>
-                            <ion-label>Tipologia</ion-label>
-                            <ion-select ngModel name="tipologia" placeholder="Tipologia">
-                                <ion-select-option *ngFor='let tipo of tipologia' value={{tipo}}>{{tipo}}</ion-select-option>
-                            </ion-select>
-                        </ion-item>
-                            <ion-item>
-                                    <ion-label>Luogo</ion-label>
-                                    <ion-select ngModel name="luogo" placeholder="Luogo" >
-                                        <ion-select-option *ngFor='let cant of cantina' value={{cant}}>{{cant}}</ion-select-option>
-                                        </ion-select>
-                                  </ion-item>
-                                  <ion-button type="submit" expand="full" color="primary">Search</ion-button>
-                                  </form>
-                <div *ngFor='let vino of vini'>
-                        <ion-list text-center >
-                            <ion-item>{{vino}}</ion-item>
-                        </ion-list>
-                        <ion-button class="button" (click)=showWine(vino)>Dettagli</ion-button>   
-                        </div>
+    <h1> Cerca per tipologia di vino e/o provenienza </h1>
+    
+    <form  #form="ngForm" (ngSubmit)="search(form)" method="post">
+        <ion-item>
+            <ion-label>Tipologia</ion-label>
+            <ion-select ngModel name="tipologia"> 
+                <ion-select-option *ngFor='let tipo of tipologia' value={{tipo}}>{{tipo}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Luogo</ion-label>
+            <ion-select ngModel name="luogo">
+                <ion-select-option *ngFor='let cant of cantina' value={{cant}}>{{cant}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        
+        <ion-button type="submit" style="margin-top: 5%;"> Cerca </ion-button>
+
+    </form>
+ 
+    <table>
+        <tr *ngFor='let vino of vini'>
+            <td  style="vertical-align: middle; text-align: left;">  
+                {{vino}} 
+            </td>
+            <td style="float: right;">
+                <ion-button class="button" (click)=showWine(vino)>Dettagli</ion-button>   
+            </td>
+        </tr>
+    </table>
+        
 </ion-content>
