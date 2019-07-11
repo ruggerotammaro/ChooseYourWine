@@ -13,34 +13,27 @@
                 <ion-card-title> Benvenuto in ChooseYourWine </ion-card-title>
             </ion-card-header>
     </ion-card>
+
     <h1> Inserisci la tipologia di vino </h1>
-    <ion-row>
-        <ion-col col-auto>
-            <table>
-                <tr>
-                    <td>
-                        <ion-img class="wine_icon" src="/assets/icon/GlassBottle_icon.png"> </ion-img>
-                    </td>
-                    <td>
-                        <ion-input placeholder="rosso" (ionBlur)="search($event)"> </ion-input>
-                    </td>
-                    <td>
-                        <ion-img class="search_icon" src="/assets/icon/search_icon.png"> </ion-img>
-                    </td>
-                </tr>
-                <tr *ngFor='let vino of vini'>
-                    <td></td>
-                    <td>
+                    <form  #form="ngForm" (ngSubmit)="search(form)" method="post">
+                        <ion-item>
+                            <ion-label>Tipologia</ion-label>
+                            <ion-select ngModel name="tipologia" placeholder="Tipologia">
+                                <ion-select-option *ngFor='let tipo of tipologia' value={{tipo}}>{{tipo}}</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                            <ion-item>
+                                    <ion-label>Luogo</ion-label>
+                                    <ion-select ngModel name="luogo" placeholder="Luogo" >
+                                        <ion-select-option *ngFor='let cant of cantina' value={{cant}}>{{cant}}</ion-select-option>
+                                        </ion-select>
+                                  </ion-item>
+                                  <ion-button type="submit" expand="full" color="primary">Search</ion-button>
+                                  </form>
+                <div *ngFor='let vino of vini'>
                         <ion-list text-center >
                             <ion-item>{{vino}}</ion-item>
                         </ion-list>
-                    </td>
-                    <td>
                         <ion-button class="button" (click)=showWine(vino)>Dettagli</ion-button>   
-                    </td>
-                </tr>
-            </table>
-        </ion-col>
-     </ion-row>
-  
+                        </div>
 </ion-content>
