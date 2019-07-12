@@ -23,7 +23,7 @@ export class FoodPairingsPage{
   public jsonObject: any;
 
  query(query){
-    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2FwineMR&query=PREFIX+vino%3A+%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E+%0D%0A'+query+'&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
+    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2Fvino&query=PREFIX+vino%3A+%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E+%0D%0A'+query+'&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
     res => res.json())).subscribe( data => {this.jsonObject = data;
       this.sparkqlData=JSON.stringify(this.jsonObject);
       this.getAllWine(this.sparkqlData);      
