@@ -19,13 +19,13 @@
     <form  #form="ngForm" (ngSubmit)="search(form)" method="post">
         <ion-item>
             <ion-label>Tipologia</ion-label>
-            <ion-select ngModel name="tipologia"> 
+            <ion-select ngModel name="tipologia" (ionChange)=setLuogo(form)> 
                 <ion-select-option *ngFor='let tipo of tipologia' value={{tipo}}>{{tipo}}</ion-select-option>
             </ion-select>
         </ion-item>
         <ion-item>
             <ion-label>Luogo</ion-label>
-            <ion-select ngModel name="luogo">
+            <ion-select ngModel name="luogo" (ionChange)=setTipologia(form)>
                 <ion-select-option *ngFor='let cant of cantina' value={{cant}}>{{cant}}</ion-select-option>
             </ion-select>
         </ion-item>

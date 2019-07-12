@@ -95,19 +95,32 @@ export class SearchPage {
     this.query(query);    
   }
 
-  setTipo(tipologia){
-    this.tipo=tipologia;
-    console.log(this.tipo);
+  setTipologia(form: NgForm){
+    this.luogo=form.value.luogo;
+    console.log(this.luogo);
+    this.tipologia=[];
+    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2Fvino&query=prefix+vino%3A%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E%0D%0ASELECT+distinct+%3Ftipologia+WHERE+%7B%0D%0A%3Fx+vino%3AhaDenominazione+%3Fy.%0D%0A%3Fy+vino%3A%C3%A9Prodotto+%3Fcantina.%0D%0AFILTER+regex%28%3Fcantina%2C%22'+this.luogo+'%22%29.%0D%0A%3Fy+vino%3AhaTipologia+%3Ftipologia.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
+      res => res.json())).subscribe(data => {this.jsonObject=data;
+      this.sparkqlData=JSON.stringify(this.jsonObject);
+      this.getTipologia(this.sparkqlData);
+    })
   }
 
-  setLuogo(luogo){
-    this.luogo=luogo;
-    console.log(this.luogo);
+  setLuogo(form: NgForm){
+    this.tipo=form.value.tipologia;
+    console.log(this.tipo);
+    this.cantina=[];
+    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2Fvino&query=prefix+vino%3A%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E%0D%0ASELECT+distinct+%3Fluogo+WHERE+%7B%0D%0A%3Fx+vino%3AhaDenominazione+%3Fy.%0D%0A%3Fy+vino%3AhaTipologia+%3Ftipologia.%0D%0AFILTER+regex%28%3Ftipologia%2C%22'+this.tipo+'%22%29.%0D%0A%3Fy+vino%3A%C3%A9Prodotto+%3Fluogo.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
+      res => res.json())).subscribe(data => {this.jsonObject=data;
+      this.sparkqlData=JSON.stringify(this.jsonObject);
+      this.getLuogo(this.sparkqlData);
+      });
   }
 
   getTipologia(data){
     let obj = JSON.parse(data);
     let n = obj.results.bindings.length;
+    this.tipologia.push("");
     for (var i = 0; i < n; i++) {
         this.tipologia.push(this.splittingString(obj.results.bindings[i].tipologia.value));
   }
