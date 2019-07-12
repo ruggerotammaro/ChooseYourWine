@@ -1,7 +1,24 @@
+ion-content {
+  --ion-background-color:black;
+}
+
+@media screen and (max-width: 800px) {
+  ion-content {
+    --ion-background-color:red;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  ion-content {
+    --ion-background-color:yellow;
+  }
+}
+
 .welcome-card ion-img {
   max-height: 35vh;
   overflow: hidden;
 }
+
 
 .center{
   margin-left: auto;
