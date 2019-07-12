@@ -21,13 +21,13 @@ export class SearchPage {
     this.vini=[]; 
     this.tipologia=[];
     this.cantina=[]; 
-    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2Fvino&query=PREFIX+vino%3A%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E%0D%0Aselect+DISTINCT+%3Ftipologia%0D%0Awhere%7B%0D%0A%3Fx+vino%3AhaDenominazione+%3Fy.%0D%0A%3Fy+vino%3AhaTipologia+%3Ftipologia.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
+    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2FvinoMR&query=PREFIX+vino%3A%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E%0D%0Aselect+DISTINCT+%3Ftipologia%0D%0Awhere%7B%0D%0A%3Fx+vino%3AhaDenominazione+%3Fy.%0D%0A%3Fy+vino%3AhaTipologia+%3Ftipologia.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
     res => res.json())).subscribe(data => {this.jsonObject=data;
     this.sparkqlData=JSON.stringify(this.jsonObject);
     this.getTipologia(this.sparkqlData);
   })
 
-  this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2Fvino&query=PREFIX+vino%3A%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E%0D%0Aselect+DISTINCT+%3Fluogo%0D%0Awhere%7B%0D%0A%3Fx+vino%3AhaDenominazione+%3Fy.%0D%0A%3Fy+vino%3A%C3%A9Prodotto+%3Fluogo.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
+  this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2FvinoMR&query=PREFIX+vino%3A%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E%0D%0Aselect+DISTINCT+%3Fluogo%0D%0Awhere%7B%0D%0A%3Fx+vino%3AhaDenominazione+%3Fy.%0D%0A%3Fy+vino%3A%C3%A9Prodotto+%3Fluogo.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
     res => res.json())).subscribe(data => {this.jsonObject=data;
     this.sparkqlData=JSON.stringify(this.jsonObject);
     this.getLuogo(this.sparkqlData);
@@ -37,7 +37,7 @@ export class SearchPage {
   public jsonObject: any;
 
   query(query){
-    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2Fvino&query=PREFIX+vino%3A+%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E+%0D%0A'+query+'+format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
+    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2FvinoMR&query=PREFIX+vino%3A+%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E+%0D%0A'+query+'+format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
     res => res.json())).subscribe( data => {this.jsonObject = data;
       this.sparkqlData=JSON.stringify(this.jsonObject);
       this.getAllWine(this.sparkqlData);      
@@ -99,7 +99,7 @@ export class SearchPage {
     this.luogo=form.value.luogo;
     console.log(this.luogo);
     this.tipologia=[];
-    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2Fvino&query=prefix+vino%3A%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E%0D%0ASELECT+distinct+%3Ftipologia+WHERE+%7B%0D%0A%3Fx+vino%3AhaDenominazione+%3Fy.%0D%0A%3Fy+vino%3A%C3%A9Prodotto+%3Fcantina.%0D%0AFILTER+regex%28%3Fcantina%2C%22'+this.luogo+'%22%29.%0D%0A%3Fy+vino%3AhaTipologia+%3Ftipologia.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
+    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2FvinoMR&query=prefix+vino%3A%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E%0D%0ASELECT+distinct+%3Ftipologia+WHERE+%7B%0D%0A%3Fx+vino%3AhaDenominazione+%3Fy.%0D%0A%3Fy+vino%3A%C3%A9Prodotto+%3Fcantina.%0D%0AFILTER+regex%28%3Fcantina%2C%22'+this.luogo+'%22%29.%0D%0A%3Fy+vino%3AhaTipologia+%3Ftipologia.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
       res => res.json())).subscribe(data => {this.jsonObject=data;
       this.sparkqlData=JSON.stringify(this.jsonObject);
       this.getTipologia(this.sparkqlData);
@@ -110,7 +110,7 @@ export class SearchPage {
     this.tipo=form.value.tipologia;
     console.log(this.tipo);
     this.cantina=[];
-    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2Fvino&query=prefix+vino%3A%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E%0D%0ASELECT+distinct+%3Fluogo+WHERE+%7B%0D%0A%3Fx+vino%3AhaDenominazione+%3Fy.%0D%0A%3Fy+vino%3AhaTipologia+%3Ftipologia.%0D%0AFILTER+regex%28%3Ftipologia%2C%22'+this.tipo+'%22%29.%0D%0A%3Fy+vino%3A%C3%A9Prodotto+%3Fluogo.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
+    this.http.get('http://localhost:8890/sparql?default-graph-uri=http%3A%2F%2Flocalhost%3A8890%2FvinoMR&query=prefix+vino%3A%3Chttp%3A%2F%2Fw3id.org%2Ffood%2Fontology%2Fdisciplinare-vino%23%3E%0D%0ASELECT+distinct+%3Fluogo+WHERE+%7B%0D%0A%3Fx+vino%3AhaDenominazione+%3Fy.%0D%0A%3Fy+vino%3AhaTipologia+%3Ftipologia.%0D%0AFILTER+regex%28%3Ftipologia%2C%22'+this.tipo+'%22%29.%0D%0A%3Fy+vino%3A%C3%A9Prodotto+%3Fluogo.%0D%0A%7D&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on').pipe(map(
       res => res.json())).subscribe(data => {this.jsonObject=data;
       this.sparkqlData=JSON.stringify(this.jsonObject);
       this.getLuogo(this.sparkqlData);
